@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="100" width="200" class="curve">
+    <path d="M 0,50 
+             Q 25,10 50,50 
+             T 100,50 
+             T 150,50 
+             T 200,50" 
+          stroke="#000" stroke-dasharray="5,5" fill="transparent"/>
+</svg>
