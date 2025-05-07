@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parola</title>
+
+    <link rel="icon" href="/image/logo rotund.png">
+
+    <meta name="keywords"
+        content="Star Lex, Gustul de la Țară,web developer,proiecte,website,website de prezentare, aplicatie" />
+    <meta name="description" content="Păstrăm tradiţia de a produce natural.
+    Livrăm săptămânal la Soroca produse sezoniere şi lactate până la uşa ta.
+    Gustul de la ţara la preţ rezonabil." />
+    <meta name="author" content="Cujba Ruxanda" />
+    <meta name="robots" content="index,follow" />
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script src="https://kit.fontawesome.com/8a1f01fb65.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="parola">
+    <div class="par">
+        <h2>Acces Admin</h2>
+        <input type="password" id="parola" placeholder="Introdu parola">
+        <button onclick="verificaParola()">Trimite</button>
+        <p id="error"></p>
+    </div>
+
+</body>
+<script>
+    function verificaParola() {
+        const parolaCorecta = "ruxanda";
+        const parolaIntrodusa = document.getElementById("parola").value;
+
+        if (parolaIntrodusa === parolaCorecta) {
+            window.location.href = "admin.html";
+        } else {
+            document.getElementById("error").textContent = "Parolă greșită!";
+        }
+    }
+</script>
+
+</html>

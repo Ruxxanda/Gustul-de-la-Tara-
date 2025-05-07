@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salvări</title>
+
+    <link rel="icon" href="/image/logo rotund.png">
+
+    <meta name="keywords"
+        content="Star Lex, Gustul de la Țară,web developer,proiecte,website,website de prezentare, aplicatie" />
+    <meta name="description" content="Păstrăm tradiţia de a produce natural.
+    Livrăm săptămânal la Soroca produse sezoniere şi lactate până la uşa ta.
+    Gustul de la ţara la preţ rezonabil." />
+    <meta name="author" content="Cujba Ruxanda" />
+    <meta name="robots" content="index,follow" />
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script src="https://kit.fontawesome.com/8a1f01fb65.js" crossorigin="anonymous"></script>
+    <script defer src="../js/script.js"></script>
+    <script defer src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/formular.js" defer></script>
+    <script src="../js/produse.js" defer></script>
+    <script src="../js/search.js" defer></script>
+    <script src="../js/slide.js" defer></script>
+    <script src="../js/salvarinr.js" defer></script>
+    <script src="../js/cosnr.js" defer></script>
+    <script src="../js/hamburgher.js" defer></script>
+
+</head>
+
+<body>
+    <!-- date de contact / informatii -->
+    <header>
+        <nav id="bara1" class="info">
+            <div class="logo">
+                <a href="../index.html">
+                    <h2>Gustul de la Țară</h2>
+                </a>
+                <a href="contacte.html">
+                    <i class="fa-solid fa-location-dot"></i>
+                </a>
+            </div>
+            <div class="contact">
+                <a href="parola.html">
+                    <h2>Accesează Admin</h2>
+                </a>
+            </div>
+        </nav>
+
+        <nav id="bara2" class="bara">
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass icon-search" id="search-icon"></i>
+                <div class="search-bar" id="search-bar">
+                    <input type="text" id="search-input" placeholder="Caută...">
+                </div>
+            </div>
+
+
+            <div class="link">
+                <a href="../index.html">Acasă</a>
+                <a href="despre.html">Despre noi</a>
+                <a href="vanzari.html">Vânzări</a>
+                <a href="noutati.html">Noutăți</a>
+                <a href="galerie.html">Galerie</a>
+                <a href="contacte.html">Contacte</a>
+            </div>
+
+            <div class="product">
+                <div class="like">
+                    <a href="salvari.html">
+                        <i class="fa-regular fa-heart"></i>
+                    </a>
+                    <div class="nr saved-count"></div>
+                </div>
+
+                <div class="cos">
+                    <a href="cos.html">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                    <div class="nr cart-total"></div>
+                </div>
+                <div id="hamburger-menu" class="hamburger">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Meniu mobil -->
+        <div id="menu-mobile" class="menu-mobile">
+            <div class="menu-close"><i class="fa-solid fa-xmark"></i></div>
+            <div class="lincuri">
+                <a href="../index.html">Acasă</a>
+                <a href="despre.html">Despre noi</a>
+                <a href="vanzari.html">Vânzări</a>
+                <a href="noutati.html">Noutăți</a>
+                <a href="galerie.html">Galerie</a>
+                <a href="contacte.html">Contacte</a>
+            </div>
+        </div>
+
+        <div class="infor noindex">
+            <div class="custom-shape-divider-bottom-1729279497">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+
+            <div class="text">
+                <h1>Salvări</h1>
+                <p>Salvează produsele dorite pentru a le adăuga mai târziu în coș. Ușor și rapid, pentru o cumpărare mai
+                    convenabilă!
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <section class="section salvari">
+        <h1>Produse Salvate: <span id="numarProduseSalvate">0</span></h1>
+        <div class="toate-box" id="salvari-items">
+            <!-- Produsele salvate vor fi adăugate aici -->
+        </div>
+    </section>
+
+
+
+    <!-- rularea in sus -->
+    <button id="scrollToTopBtn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Informații despre companie -->
+            <div class="footer-section">
+                <h3>Despre Noi</h3>
+                <p>Produse tradiționale din lapte de la ferma noastră locală, preparate cu drag pentru tine.</p>
+            </div>
+
+            <!-- Link-uri utile -->
+            <div class="footer-section">
+                <h3>Link-uri utile</h3>
+                <ul>
+                    <li><a href="../index.html">Acasă</a></li>
+                    <li><a href="vanzari.html">Produse</a></li>
+                    <li><a href="contacte.html">Contact</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
+                    <li><a href="despre.html">Despre Noi</a></li>
+                    <li><a href="servicii.html">Servicii</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <a href="tel:0605 09 918">Telefon: 0 605 09 918</a><br>
+                <a href="mailto:cornescu1985@mail.ru">Email: cornescu1985@mail.ru</a>
+                <p>Adresă: Str. Mihai Eminescu, Mălcăuți, SR, Moldova</p>
+                <a href="https://maps.app.goo.gl/Z4EDt2am6xYVY1X1A" target="_blank">Vezi pe hartă</a>
+            </div>
+
+            <!-- Rețele sociale -->
+            <div class="footer-section">
+                <h3>Urmărește-ne</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100039241286586" target="_blank"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/cascaval_de_malcauti/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/@gustul_de_la_tara?si=kOSCzFddsHMPs4cv" target="_blank"><i
+                            class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@cascaval_de_malcauti?_t=8jYCxCiSgHV&_r=1" target="_blank"><i
+                            class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="ani-container"></span> Star Lex - Gustul de la Țară. Acest website a fost realizat în cadrul competiției ”Tekwill
+                Junior Ambassadors” organizată de proiectul ”Tekwill în Fiecare Școală” și nu reflectă neapărat opinia
+                proiectului.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            updateSavedItems();
+        });
+
+        function updateSavedItems() {
+            const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
+            const salvariItemsContainer = document.getElementById('salvari-items');
+            const salvariHeader = document.querySelector('section.salvari h1');
+
+            if (savedItems.length > 0) {
+                salvariItemsContainer.innerHTML = '';
+                salvariHeader.textContent = 'Produse Salvate'; // Setează textul pentru titlul salvărilor
+
+                savedItems.forEach(item => {
+                    const div = document.createElement('div');
+                    div.innerHTML = item.html;
+
+                    // Asigură-te că iconița de salvare este `fa-solid` și are culoarea albă
+                    const heartIcon = div.querySelector('.buton-favorite .fa-heart');
+                    if (heartIcon) {
+                        heartIcon.classList.remove('fa-regular'); // Asigură-te că iconița nu are clasa fa-regular
+                        heartIcon.classList.add('fa-solid');
+                        heartIcon.classList.add('favorit'); // Adaugă clasa pentru culoarea roșie când e favorită
+                        heartIcon.onclick = function () {
+                            removeFromSaved(item.id);
+                        };
+                    }
+
+                    salvariItemsContainer.appendChild(div.firstChild);
+                });
+            } else {
+                salvariHeader.textContent = 'Nu ai produse salvate!'; // Setează textul când nu sunt produse salvate
+            }
+        }
+
+        function removeFromSaved(id) {
+            let savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
+            savedItems = savedItems.filter(item => item.id !== id);
+
+            // Verifică dacă lista este goală și reîncarcă pagina
+            if (savedItems.length === 0) {
+                localStorage.removeItem('savedItems'); // Opțional, curăță localStorage
+                location.reload(); // Reîncarcă pagina
+            } else {
+                localStorage.setItem('savedItems', JSON.stringify(savedItems));
+                updateSavedItems(); // Reîncarcă lista de salvări
+            }
+        }
+
+
+
+        // cum bara de navigare se schimba la derulare
+        window.addEventListener('scroll', function () {
+            var bara2 = document.getElementById('bara2');
+
+            if (window.scrollY > 100) {
+                bara2.classList.add('scrolled');
+            } else {
+                bara2.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
