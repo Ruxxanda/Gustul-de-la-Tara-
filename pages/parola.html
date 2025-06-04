@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parola</title>
+    <title>Asministrator</title>
 
     <link rel="icon" href="/image/logo rotund.png">
 
@@ -24,7 +24,8 @@
 
 <body class="parola">
     <div class="par">
-        <h2>Acces Admin</h2>
+        <h2>Pagina administratorului</h2>
+        <label>Introdu parola</label>
         <input type="password" id="parola" placeholder="Introdu parola">
         <button onclick="verificaParola()">Trimite</button>
         <p id="error"></p>
@@ -33,15 +34,22 @@
 </body>
 <script>
     function verificaParola() {
-        const parolaCorecta = "ruxanda";
-        const parolaIntrodusa = document.getElementById("parola").value;
+    const parolaCorecta = "ruxanda";
+    const parolaIntrodusa = document.getElementById("parola").value;
 
-        if (parolaIntrodusa === parolaCorecta) {
-            window.location.href = "admin.html";
-        } else {
-            document.getElementById("error").textContent = "Parolă greșită!";
-        }
+    if (parolaIntrodusa === parolaCorecta) {
+        window.location.href = "admin.html";
+    } else {
+        document.getElementById("error").textContent = "Parolă greșită!";
     }
+}
+
+document.getElementById("parola").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        verificaParola();
+    }
+});
+
 </script>
 
 </html>

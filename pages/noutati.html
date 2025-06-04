@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Noutăți</title>
 
     <link rel="icon" href="/image/logo rotund.png">
 
@@ -18,20 +18,20 @@
 
     <link rel="stylesheet" href="../css/style.css">
 
-    <script src="https://kit.fontawesome.com/8a1f01fb65.js" crossorigin="anonymous"></script>
+    <script defer src="https://kit.fontawesome.com/8a1f01fb65.js" crossorigin="anonymous"></script>
     <script defer src="../js/script.js"></script>
-    <script defer src="../js/jquery-3.7.1.min.js"></script>
     <script src="../js/formular.js" defer></script>
     <script src="../js/produse.js" defer></script>
     <script src="../js/search.js" defer></script>
     <script src="../js/slide.js" defer></script>
     <script src="../js/salvarinr.js" defer></script>
     <script src="../js/cosnr.js" defer></script>
-    <script src="../js/galerie.js" defer></script>
     <script src="../js/hamburgher.js" defer></script>
+
 </head>
 
 <body>
+
     <!-- date de contact / informatii -->
     <header class="toate-altele">
         <nav id="bara1" class="info">
@@ -63,7 +63,7 @@
                 <a href="../index.html">Acasă</a>
                 <a href="despre.html">Despre noi</a>
                 <a href="vanzari.html">Vânzări</a>
-                <a href="noutati.html">Noutăți</a>
+                <a class="acum" href="noutati.html">Noutăți</a>
                 <a href="galerie.html">Galerie</a>
                 <a href="contacte.html">Contacte</a>
             </div>
@@ -121,36 +121,8 @@
         </div>
     </header>
 
-    <h1>Date din Google Sheets</h1>
-  <div id="date-container">Se încarcă...</div>
-
-  <script>
-    const url = "https://script.google.com/macros/s/AKfycbwKn90XdTjJfy_AAqZidVQsiq11BPDiNOXHrmu4p3uAhH0i0VFhMJBPl8oZFdkNU5mz/exec"; // <- înlocuiește
-
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById("date-container");
-        container.innerHTML = ""; // șterge „Se încarcă...”
-        console.log("Date primite:", data);
-        data.forEach(item => {
-          const div = document.createElement("div");
-          div.className = "sectiune";
-
-          for (let key in item) {
-            div.innerHTML += `<p><span class="titlu">${key}:</span> ${item[key]}</p>`;
-          }
-
-          container.appendChild(div);
-        });
-      })
-      .catch(err => {
-        document.getElementById("date-container").innerText = "Eroare la încărcare.";
-        console.error(err);
-        console.error("Detalii eroare:", err);
-      });
-  </script>
-
+    <h2>Lista telefoanelor</h2>
+    <div id="card-container"></div>
 
     <button id="scrollToTopBtn">
         <i class="fa-solid fa-arrow-up"></i>
@@ -211,44 +183,36 @@
                 proiectului.</p>
         </div>
     </footer>
-
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            updateFavoriteIcons();
-        });
+        const sheetID = '1t93eicQX3FN5xJpmcVAT1kLZ1GJrkjWQOwfLx-NmP6U';
+        const gid = '0';
+        const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:csv&gid=${gid}`;
 
-        function updateFavoriteIcons() {
-            const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
-            savedItems.forEach(item => {
-                const heartIcon = document.querySelector(`.box[data-id='${item.id}'] .fa-heart`);
-                if (heartIcon) {
-                    heartIcon.classList.add('fa-solid');
-                    heartIcon.classList.add('favorit'); // Asigură că inima apare roșie
-                }
+        fetch(url)
+            .then(res => res.text())
+            .then(data => {
+                const rows = data.split('\n');
+                const container = document.getElementById('card-container');
+                rows.forEach((row, index) => {
+                    const cols = row.split(',');
+                    if (cols.length >= 3 && index > 0) {
+                        const div = document.createElement('div');
+                        div.className = 'card';
+                        div.innerHTML = `
+            <h3>${cols[0]}</h3>
+            <p><strong>Model:</strong> ${cols[1]}</p>
+            <p><strong>Preț:</strong> ${cols[2]}</p>
+          `;
+                        container.appendChild(div);
+                    }
+                });
             });
-        }
 
-        function toggleFavorite(element) {
-            const productBox = element.closest('.box');
-            const productId = productBox.dataset.id;
-            const productContent = productBox.outerHTML;
 
-            let savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
-            const isSaved = savedItems.some(item => item.id === productId);
 
-            if (isSaved) {
-                savedItems = savedItems.filter(item => item.id !== productId);
-                localStorage.setItem('savedItems', JSON.stringify(savedItems));
-                element.classList.remove('favorit'); // Elimină culoarea roșie
-            } else {
-                savedItems.push({ id: productId, html: productContent });
-                localStorage.setItem('savedItems', JSON.stringify(savedItems));
-                element.classList.add('favorit'); // Adaugă culoarea roșie
-            }
 
-            // Asigură-te că iconița rămâne întotdeauna fa-solid
-            element.classList.add('fa-solid');
-        }
+
+
 
         // cum bara de navigare se schimba la derulare
         window.addEventListener('scroll', function () {

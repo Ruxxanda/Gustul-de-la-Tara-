@@ -132,6 +132,52 @@
         </div>
 
     </section>
+<!-- index.html -->
+<div id="discount-section"></div>
+
+<script>
+  // Verifică dacă există o reducere salvată în localStorage
+  const discountData = JSON.parse(localStorage.getItem("discount"));
+  if (discountData) {
+    const endTime = new Date(discountData.endTime).getTime();
+    const now = new Date().getTime();
+
+    // Verifică dacă reducerea a expirat
+    if (endTime > now) {
+      // Creează secțiunea de reduceri
+      const discountSection = document.getElementById("discount-section");
+      discountSection.innerHTML = `
+        <h2>${discountData.title}</h2>
+        <p>${discountData.description}</p>
+        <p id="countdown"></p>
+      `;
+
+      // Funcția pentru numărătoarea inversă
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const timeLeft = endTime - now;
+
+        if (timeLeft <= 0) {
+          // Dacă timpul a expirat, ascunde secțiunea
+          discountSection.style.display = "none";
+        } else {
+          // Calcul numărătoare inversă
+          const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+          document.getElementById("countdown").innerHTML = `
+            Reducerea se termină în: ${days}z ${hours}h ${minutes}m ${seconds}s
+          `;
+        }
+      }
+
+      // Actualizează numărătoarea inversă fiecare secundă
+      setInterval(updateCountdown, 1000);
+    }
+  }
+</script>
 
     <!-- servicii -->
     <section class="section servicii">

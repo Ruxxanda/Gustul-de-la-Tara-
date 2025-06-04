@@ -133,6 +133,70 @@
         </form>
     </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Include Google Identity -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <!-- Buton de logare -->
+    <div id="g_id_onload" data-client_id="778156860847-acm68jrn7ud3rjqmacejdic6kursk4bf.apps.googleusercontent.com" data-callback="handleCredentialResponse">
+    </div>
+
+    <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline" data-text="signin_with"
+        data-size="large">
+    </div>
+
+
+
+
+    <script>
+        function handleCredentialResponse(response) {
+            const token = response.credential;
+            console.log("JWT Token:", token);
+
+            // Decodare simplă (doar pentru test)
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            console.log("User Info:", payload);
+
+            // Exemplu: afișează numele
+            alert("Bun venit, " + payload.name);
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <script defer>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwKn90XdTjJfy_AAqZidVQsiq11BPDiNOXHrmu4p3uAhH0i0VFhMJBPl8oZFdkNU5mz/exec'
 
@@ -148,7 +212,26 @@
                 .catch(error => console.error('Error!', error.message))
         }) 
     </script>
+    <form id="discount-form">
+        <input type="text" id="title" placeholder="Titlu Reducere" required />
+        <textarea id="description" placeholder="Descriere Reducere" required></textarea>
+        <input type="datetime-local" id="end-time" required />
+        <button type="submit">Salvează Reducerea</button>
+    </form>
 
+    <script>
+        document.getElementById("discount-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const title = document.getElementById("title").value;
+            const description = document.getElementById("description").value;
+            const endTime = document.getElementById("end-time").value;
+
+            // Salvează reducerile în localStorage
+            localStorage.setItem("discount", JSON.stringify({ title, description, endTime }));
+            alert("Reducerea a fost salvată!");
+        });
+    </script>
 
     <button id="scrollToTopBtn">
         <i class="fa-solid fa-arrow-up"></i>
@@ -211,43 +294,6 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            updateFavoriteIcons();
-        });
-
-        function updateFavoriteIcons() {
-            const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
-            savedItems.forEach(item => {
-                const heartIcon = document.querySelector(`.box[data-id='${item.id}'] .fa-heart`);
-                if (heartIcon) {
-                    heartIcon.classList.add('fa-solid');
-                    heartIcon.classList.add('favorit'); // Asigură că inima apare roșie
-                }
-            });
-        }
-
-        function toggleFavorite(element) {
-            const productBox = element.closest('.box');
-            const productId = productBox.dataset.id;
-            const productContent = productBox.outerHTML;
-
-            let savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
-            const isSaved = savedItems.some(item => item.id === productId);
-
-            if (isSaved) {
-                savedItems = savedItems.filter(item => item.id !== productId);
-                localStorage.setItem('savedItems', JSON.stringify(savedItems));
-                element.classList.remove('favorit'); // Elimină culoarea roșie
-            } else {
-                savedItems.push({ id: productId, html: productContent });
-                localStorage.setItem('savedItems', JSON.stringify(savedItems));
-                element.classList.add('favorit'); // Adaugă culoarea roșie
-            }
-
-            // Asigură-te că iconița rămâne întotdeauna fa-solid
-            element.classList.add('fa-solid');
-        }
-
         // cum bara de navigare se schimba la derulare
         window.addEventListener('scroll', function () {
             var bara2 = document.getElementById('bara2');

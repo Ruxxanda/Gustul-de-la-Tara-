@@ -1699,7 +1699,13 @@ section.salvari .box {
     width: 250px;
     height: 350px;
     border-radius: 18px;
-    box-shadow: #b8b8b8 0px 1px 4px, #b8b8b8 0px 0px 0px 3px;
+    box-shadow: #b8b8b84f 0px 1px 1px, #b8b8b84d 0px 0px 0px 2px;
+}
+
+section.vanzari .box:hover,
+section.cos .box:hover,
+section.salvari .box:hover {
+    box-shadow: #b8b8b84f 0px 1px 4px, #b8b8b84d 0px 0px 0px 4px;
 }
 
 section.vanzari .box img,
@@ -2008,6 +2014,32 @@ section.date .sect .info .logo {
     justify-content: center;
     border-radius: 50%;
     margin-top: 20px;
+}
+
+
+section#stelute {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 50px 0;
+}
+
+section#stelute #rating-container .star {
+    font-size: 50px;
+    cursor: pointer;
+    color: gray;
+    transition: color 0.2s;
+}
+
+section#stelute #rating-container .star.active {
+    color: gold;
+}
+
+section#stelute #rating-container .star:hover,
+section#stelute #rating-container .star:hover .star {
+    color: gold;
 }
 
 /* trimite mesaj */
@@ -2661,9 +2693,90 @@ input[type="number"]::-webkit-outer-spin-button {
 
 
 
+/* parola si adminul */
+body.parola {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+}
+
+body.parola .par {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #ffd983;
+    width: 400px;
+    height: 200px;
+    border-radius: 20px;
+    gap: 10px;
+}
+
+body.parola .par input[type="password"] {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    outline: none;
+    width: 250px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+body.parola .par input[type="password"]:focus {
+    border-color: #d2960a;
+    box-shadow: 0 0 5px #d2960a;
+}
+
+body.parola .par button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #d2960a;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+}
+
+body.parola .par button:hover {
+    background-color: #815c05;
+}
+
+body.parola .par #error {
+    color: red;
+    margin-top: 10px;
+}
+
+
+
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin: 0 0 10px;
+}
+
+.card p {
+    margin: 5px 0;
+}
+
+
+
+
 
 /* tablete */
 @media (max-width: 1100px) {
+
     header,
     header.toate-altele {
         height: auto;
