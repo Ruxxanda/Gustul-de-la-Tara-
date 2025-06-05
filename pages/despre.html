@@ -44,6 +44,104 @@
                 </a>
             </div>
             <div class="contact">
+                <label for="toggle" class="toggle">
+                    <input type="checkbox" />
+
+                    <svg viewBox="0 0 100 45" width="100" height="40">
+                        <defs>
+                            <rect id="background" x="0" y="0" width="90" height="35" rx="17.5"></rect>
+
+                            <clipPath id="clip">
+                                <use href="#background"></use>
+                            </clipPath>
+
+                            <linearGradient id="gradient-light" x1="0" x2="0" y1="0" y2="1">
+                                <stop stop-color="#8bc8f2" offset="0"></stop>
+                                <stop stop-color="#fff" offset="1"></stop>
+                            </linearGradient>
+
+                            <filter id="blur-light">
+                                <feGaussianBlur stdDeviation="1"></feGaussianBlur>
+                            </filter>
+
+                            <pattern id="pattern-light" width="0.1" height="1" viewBox="0 0 10 45">
+                                <path fill="#40b5f8" d="M 0 0 a 6 6 0 0 0 10 0 v 45 h -10 z"></path>
+                            </pattern>
+
+                            <linearGradient id="gradient-dark" x1="0" x2="0" y1="0" y2="1">
+                                <stop stop-color="#1F2241" offset="0"></stop>
+                                <stop stop-color="#7D59DF" offset="1"></stop>
+                            </linearGradient>
+                            <linearGradient id="gradient-mask" x1="0" x2="0" y1="0" y2="1">
+                                <stop stop-color="#000" offset="0"></stop>
+                                <stop stop-color="#fff" offset="1"></stop>
+                            </linearGradient>
+                            <mask id="mask-dark">
+                                <use fill="url(#gradient-mask)" href="#background"></use>
+                            </mask>
+                            <radialGradient id="gradient-moon">
+                                <stop stop-color="#fdfdfd" offset="0.7"></stop>
+                                <stop stop-color="#e2e2e2" offset="1"></stop>
+                            </radialGradient>
+
+                            <radialGradient id="gradient-crater">
+                                <stop stop-color="#e0e0e0" offset="0"></stop>
+                                <stop stop-color="#d9d9d9" offset="1"></stop>
+                            </radialGradient>
+                            <pattern id="pattern-dark" width="0.2" height="1" viewBox="0 0 20 45">
+                                <path fill="#fff" d="M 2 5 l 1 1 l -1 1 l -1 -1 l 1 -1"></path>
+                                <path fill="#fff" d="M 10 16 l 1 1 l -1 1 l -1 -1 l 1 -1"></path>
+                                <path fill="#fff" d="M 16 27 l 1 1 l -1 1 l -1 -1 l 1 -1"></path>
+                                <path fill="#fff" d="M 10 38 l 1 1 l -1 1 l -1 -1 l 1 -1"></path>
+                            </pattern>
+                        </defs>
+
+                        <g transform="translate(5 5)">
+                            <g clip-path="url(#clip)">
+                                <g class="dark">
+                                    <use fill="url(#gradient-dark)" href="#background"></use>
+                                    <g class="background" transform="translate(0 -30) scale(1 0.4)">
+                                        <rect transform="translate(-40 0) rotate(4)" fill="url(#pattern-dark)" x="0"
+                                            y="0" width="100" height="45"></rect>
+                                    </g>
+                                    <use mask="url(#mask-dark)" fill="url(#gradient-dark)" href="#background"></use>
+                                </g>
+                                <g class="light">
+                                    <use fill="url(#gradient-light)" href="#background"></use>
+                                    <g class="background" transform="translate(-30 -20)">
+                                        <g transform="translate(30 20)">
+                                            <rect fill="url(#pattern-light)" x="-5" y="27.5" width="100" height="45">
+                                            </rect>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+
+                        <g transform="translate(77.5 22.5)">
+                            <g class="translate" transform="translate(-55)">
+                                <g class="rotate" transform="rotate(-100)">
+                                    <g class="dark">
+                                        <circle fill="url(#gradient-moon)" cx="0" cy="0" r="13"></circle>
+                                        <g transform="translate(-5 -5)">
+                                            <ellipse transform="rotate(-30)" fill="url(#gradient-crater)"
+                                                stroke="#d5d5d5" stroke-width="0.2" cx="0" cy="0" rx="2.5" ry="2">
+                                            </ellipse>
+                                        </g>
+                                        <g transform="translate(7 4)">
+                                            <ellipse fill="url(#gradient-crater)" stroke="#d5d5d5" stroke-width="0.2"
+                                                cx="0" cy="0" rx="2.5" ry="2.8"></ellipse>
+                                        </g>
+                                    </g>
+                                </g>
+                                <g class="light">
+                                    <circle fill="#FFD21F" cx="0" cy="0" r="13" filter="url(#blur-light)"></circle>
+                                    <circle fill="#FFD21F" cx="0" cy="0" r="12"></circle>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </label>
                 <a href="parola.html">
                     <h2>Accesează Admin</h2>
                 </a>
@@ -177,64 +275,90 @@
         </div>
 
     </section>
-
     <!-- beneficiile cascavalului nostru -->
-    <section class="section beneficii">
-        <h1>Beneficiile cașcavalului nostru</h1>
-        <button class="nav-button left" onclick="moveLeft()">
-            <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <div class="sectiuni">
-            <div class="slide">
-                <div class="imaginea i1"></div>
-                <h2>Clitate Superioară</h2>
-                <p>Cașcavalul nostru este produs din lapte proaspăt de cea mai bună calitate, garantând un gust
-                    autentic
-                    și natural.</p>
-            </div>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <section class="testimonial-section" id="testimonials">
+        <h2 class="section-title">Beneficiile cașcavalului nostru</h2>
+        <div class="section-content">
+            <div class="slider-container swiper">
+                <div class="slider-wrapper">
+                    <ul class="testimonials-list swiper-wrapper">
+                        <li class="testimonial swiper-slide">
+                            <img src="/image/cas 1.jpg" alt="User" class="user-image">
+                            <h3 class="name">Calitate Superioară</h3>
+                            <p class="feedback">Cașcavalul nostru este produs din lapte proaspăt de cea mai bună calitate, garantând un gust autentic și natural.</p>
+                        </li>
+                        <li class="testimonial swiper-slide">
+                            <img src="/image/cas 5.jpg" alt="User" class="user-image">
+                            <h3 class="name">Metode Tradiționale</h3>
+                            <p class="feedback">Folosim rețete și tehnici tradiționale transmise din generație în generație, pentru a oferi un produs autentic și plin de savoare.</p>
+                        </li>
+                        <li class="testimonial swiper-slide">
+                            <img src="/image/cas 36.jpg" alt="User" class="user-image">
+                            <h3 class="name">Sănătate și Nutriție</h3>
+                            <p class="feedback">Cașcavalul nostru este o sursă bogată de calciu, proteine și vitamine, contribuind la o alimentație sănătoasă și echilibrată.</p>
+                        </li>
+                        <li class="testimonial swiper-slide">
+                            <img src="/image/traditie 4.jpg" alt="User" class="user-image">
+                            <h3 class="name">Suport Local</h3>
+                            <p class="feedback">Achiziționând produsele noastre, susțineți o afacere locală de familie și contribuți la dezvoltarea economiei locale.</p>
+                        </li>
+                        <li class="testimonial swiper-slide">
+                            <img src="/image/galerie 3.jpg" alt="User" class="user-image">
+                            <h3 class="name">Transparență și Încredere</h3>
+                            <p class="feedback">Oferim transparență totală în ceea ce privește procesul nostru de producție.</p>
+                        </li>
+                        <li class="testimonial swiper-slide">
+                            <img src="/image/traditie 3.jpg" alt="User" class="user-image">
+                            <h3 class="name">Experiență Unică</h3>
+                            <p class="feedback">Vizitatorii site-ului nostru pot descoperi povestea din spatele fiecărui cașcaval și se pot bucura de o experiență unică.</p>
+                        </li>
+                    </ul>
 
-            <div class="slide">
-                <div class="imaginea i2"></div>
-                <h2>Metode Tradiționale</h2>
-                <p>Folosim rețete și tehnici tradiționale transmise din generație în generație, pentru a oferi un
-                    produs
-                    autentic și plin de savoare.</p>
-            </div>
-
-            <div class="slide">
-                <div class="imaginea i3"></div>
-                <h2>Sănătate și Nutriție</h2>
-                <p>Cașcavalul nostru este o sursă bogată de calciu, proteine și vitamine, contribuind la o
-                    alimentație
-                    sănătoasă și echilibrată.</p>
-            </div>
-
-            <div class="slide">
-                <div class="imaginea i4"></div>
-                <h2>Suport Local</h2>
-                <p>Achiziționând produsele noastre, susțineți o afacere locală de familie și contribuți la
-                    dezvoltarea
-                    economiei locale.</p>
-            </div>
-
-            <div class="slide">
-                <div class="imaginea i5"></div>
-                <h2 class="transp">Transparență <br>și Încredere</h2>
-                <p class="transp">Oferim transparență totală în ceea ce privește procesul nostru de producție.</p>
-            </div>
-
-            <div class="slide">
-                <div class="imaginea i6"></div>
-                <h2>Experiență Unică</h2>
-                <p>Vizitatorii site-ului nostru pot descoperi povestea din spatele fiecărui cașcaval și se pot
-                    bucura de
-                    o experiență unică.</p>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-slide-button swiper-button-prev"></div>
+                    <div class="swiper-slide-button swiper-button-next"></div>
+                </div>
             </div>
         </div>
-        <button class="nav-button right" onclick="moveRight()">
-            <i class="fa-solid fa-chevron-right"></i>
-        </button>
     </section>
+    <!--link swiper-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        //swiper
+        const swiper = new Swiper('.slider-wrapper', {
+            loop: true,
+            grapCursor: true,
+            spaceBetween: 25,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: true,
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            //
+            breakpoints: {
+                0: {
+                    slidesPerView: 1
+                },
+                768: {
+                    slidesPerView: 2
+                },
+                1024: {
+                    slidesPerView: 3
+                }
+            }
+        })
+    </script>
 
     <!-- cum facem noi branzeturile noastre -->
     <section class="section receta">
@@ -242,7 +366,7 @@
         <div class="sir">
             <div class="conteiner x1">
                 <div>
-                    <p>01</p>
+                    <p style="color: black !important;">01</p>
                 </div>
                 <h1>Selecția Laptelui</h1>
                 <p>Începem cu lapte proaspăt și de cea mai bună calitate de la vacile noastre crescute tradițional.
@@ -251,7 +375,7 @@
             <img src="../svg/curbe.svg" class="curbe unu">
             <div class="conteiner x2 doi-sus">
                 <div>
-                    <p>02</p>
+                    <p style="color: black !important;">02</p>
                 </div>
                 <h1>Închegarea</h1>
                 <p>Laptele este încălzit și amestecat cu culturi lactice și cheag natural pentru a începe procesul
@@ -261,7 +385,7 @@
             <img src="../svg/curbe.svg" class="curbe doi">
             <div class="conteiner x3">
                 <div>
-                    <p>03</p>
+                    <p style="color: black !important;">03</p>
                 </div>
                 <h1>Scurgerea/ Formarea</h1>
                 <p>Cașul rezultat este tăiat în bucăți și scurs de zer, apoi este modelat în forme speciale. Acest
@@ -270,7 +394,7 @@
             <img src="../svg/curbe.svg" class="curbe trei">
             <div class="conteiner x4 patru-sus">
                 <div>
-                    <p>04</p>
+                    <p style="color: black !important;">04</p>
                 </div>
                 <h1>Maturarea</h1>
                 <p>Brânzeturile noastre sunt lăsate să se matureze în pivnițe răcoroase, unde își dezvoltă aroma și
@@ -343,7 +467,7 @@
                 <h1 class="text">Gustul de la Țară</h1>
                 <a href="https://www.facebook.com/profile.php?id=100039241286586" target="_blank">
                     <button>
-                        <p>Mai mult</p>
+                        <p style="color: black !important;">Mai mult</p>
                     </button>
                 </a>
             </div>
@@ -358,7 +482,7 @@
                 <h1 class="text">Societatea cu Răspundere <br>Limitată STAR LEX</h1>
                 <a href="https://infodebit.md/1017607002064/societatea-cu-raspundere-limitata-star-lex" target="_blank">
                     <button>
-                        <p>Mai mult</p>
+                        <p style="color: black !important;">Mai mult</p>
                     </button>
                 </a>
             </div>
@@ -475,7 +599,8 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; <span id="ani-container"></span> Star Lex - Gustul de la Țară. Acest website a fost realizat în cadrul competiției ”Tekwill
+            <p>&copy; <span id="ani-container"></span> Star Lex - Gustul de la Țară. Acest website a fost realizat în
+                cadrul competiției ”Tekwill
                 Junior Ambassadors” organizată de proiectul ”Tekwill în Fiecare Școală” și nu reflectă neapărat opinia
                 proiectului.</p>
         </div>

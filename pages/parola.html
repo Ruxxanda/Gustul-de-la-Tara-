@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 
 <head>
     <meta charset="UTF-8">
@@ -19,37 +19,303 @@
     <link rel="stylesheet" href="../css/style.css">
 
     <script src="https://kit.fontawesome.com/8a1f01fb65.js" crossorigin="anonymous"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script defer src="https://kit.fontawesome.com/8a1f01fb65.js" crossorigin="anonymous"></script>
+    <script defer src="../js/script.js"></script>
+    <script src="../js/formular.js" defer></script>
+    <script src="../js/produse.js" defer></script>
+    <script src="../js/search.js" defer></script>
+    <script src="../js/slide.js" defer></script>
+    <script src="../js/salvarinr.js" defer></script>
+    <script src="../js/cosnr.js" defer></script>
+    <script src="../js/hamburgher.js" defer></script>
 
 </head>
 
-<body class="parola">
-    <div class="par">
-        <h2>Pagina administratorului</h2>
-        <label>Introdu parola</label>
-        <input type="password" id="parola" placeholder="Introdu parola">
-        <button onclick="verificaParola()">Trimite</button>
-        <p id="error"></p>
-    </div>
+<body>
+    <!-- date de contact / informatii -->
+    <header style="height: 100vh;" class="toate-altele">
+        <nav id="bara1" class="info">
+            <div class="logo">
+                <a href="../index.html">
+                    <h2>Gustul de la Țară</h2>
+                </a>
+                <a href="contacte.html">
+                    <i class="fa-solid fa-location-dot"></i>
+                </a>
+            </div>
+            <div class="contact">
+                <label for="toggle" class="toggle">
+                    <input type="checkbox" />
+
+                    <svg viewBox="0 0 100 45" width="100" height="40">
+                        <defs>
+                            <rect id="background" x="0" y="0" width="90" height="35" rx="17.5"></rect>
+
+                            <clipPath id="clip">
+                                <use href="#background"></use>
+                            </clipPath>
+
+                            <linearGradient id="gradient-light" x1="0" x2="0" y1="0" y2="1">
+                                <stop stop-color="#8bc8f2" offset="0"></stop>
+                                <stop stop-color="#fff" offset="1"></stop>
+                            </linearGradient>
+
+                            <filter id="blur-light">
+                                <feGaussianBlur stdDeviation="1"></feGaussianBlur>
+                            </filter>
+
+                            <pattern id="pattern-light" width="0.1" height="1" viewBox="0 0 10 45">
+                                <path fill="#40b5f8" d="M 0 0 a 6 6 0 0 0 10 0 v 45 h -10 z"></path>
+                            </pattern>
+
+                            <linearGradient id="gradient-dark" x1="0" x2="0" y1="0" y2="1">
+                                <stop stop-color="#1F2241" offset="0"></stop>
+                                <stop stop-color="#7D59DF" offset="1"></stop>
+                            </linearGradient>
+                            <linearGradient id="gradient-mask" x1="0" x2="0" y1="0" y2="1">
+                                <stop stop-color="#000" offset="0"></stop>
+                                <stop stop-color="#fff" offset="1"></stop>
+                            </linearGradient>
+                            <mask id="mask-dark">
+                                <use fill="url(#gradient-mask)" href="#background"></use>
+                            </mask>
+                            <radialGradient id="gradient-moon">
+                                <stop stop-color="#fdfdfd" offset="0.7"></stop>
+                                <stop stop-color="#e2e2e2" offset="1"></stop>
+                            </radialGradient>
+
+                            <radialGradient id="gradient-crater">
+                                <stop stop-color="#e0e0e0" offset="0"></stop>
+                                <stop stop-color="#d9d9d9" offset="1"></stop>
+                            </radialGradient>
+                            <pattern id="pattern-dark" width="0.2" height="1" viewBox="0 0 20 45">
+                                <path fill="#fff" d="M 2 5 l 1 1 l -1 1 l -1 -1 l 1 -1"></path>
+                                <path fill="#fff" d="M 10 16 l 1 1 l -1 1 l -1 -1 l 1 -1"></path>
+                                <path fill="#fff" d="M 16 27 l 1 1 l -1 1 l -1 -1 l 1 -1"></path>
+                                <path fill="#fff" d="M 10 38 l 1 1 l -1 1 l -1 -1 l 1 -1"></path>
+                            </pattern>
+                        </defs>
+
+                        <g transform="translate(5 5)">
+                            <g clip-path="url(#clip)">
+                                <g class="dark">
+                                    <use fill="url(#gradient-dark)" href="#background"></use>
+                                    <g class="background" transform="translate(0 -30) scale(1 0.4)">
+                                        <rect transform="translate(-40 0) rotate(4)" fill="url(#pattern-dark)" x="0"
+                                            y="0" width="100" height="45"></rect>
+                                    </g>
+                                    <use mask="url(#mask-dark)" fill="url(#gradient-dark)" href="#background"></use>
+                                </g>
+                                <g class="light">
+                                    <use fill="url(#gradient-light)" href="#background"></use>
+                                    <g class="background" transform="translate(-30 -20)">
+                                        <g transform="translate(30 20)">
+                                            <rect fill="url(#pattern-light)" x="-5" y="27.5" width="100" height="45">
+                                            </rect>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+
+                        <g transform="translate(77.5 22.5)">
+                            <g class="translate" transform="translate(-55)">
+                                <g class="rotate" transform="rotate(-100)">
+                                    <g class="dark">
+                                        <circle fill="url(#gradient-moon)" cx="0" cy="0" r="13"></circle>
+                                        <g transform="translate(-5 -5)">
+                                            <ellipse transform="rotate(-30)" fill="url(#gradient-crater)"
+                                                stroke="#d5d5d5" stroke-width="0.2" cx="0" cy="0" rx="2.5" ry="2">
+                                            </ellipse>
+                                        </g>
+                                        <g transform="translate(7 4)">
+                                            <ellipse fill="url(#gradient-crater)" stroke="#d5d5d5" stroke-width="0.2"
+                                                cx="0" cy="0" rx="2.5" ry="2.8"></ellipse>
+                                        </g>
+                                    </g>
+                                </g>
+                                <g class="light">
+                                    <circle fill="#FFD21F" cx="0" cy="0" r="13" filter="url(#blur-light)"></circle>
+                                    <circle fill="#FFD21F" cx="0" cy="0" r="12"></circle>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </label>
+
+                <a href="parola.html">
+                    <h2>Accesează Admin</h2>
+                </a>
+            </div>
+        </nav>
+
+        <nav id="bara2" class="bara">
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass icon-search" id="search-icon"></i>
+                <div class="search-bar" id="search-bar">
+                    <input type="text" id="searchInput" placeholder="Caută un produs...">
+                </div>
+            </div>
+
+
+            <div class="link">
+                <a href="../index.html">Acasă</a>
+                <a href="despre.html">Despre noi</a>
+                <a href="vanzari.html">Vânzări</a>
+                <a href="noutati.html">Noutăți</a>
+                <a href="galerie.html">Galerie</a>
+                <a href="contacte.html">Contacte</a>
+            </div>
+
+            <div class="product">
+                <div class="like">
+                    <a href="salvari.html">
+                        <i class="fa-regular fa-heart"></i>
+                    </a>
+                    <div class="nr saved-count"></div>
+                </div>
+
+                <div class="cos">
+                    <a href="cos.html">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                    <div class="nr cart-total"></div>
+                </div>
+                <div id="hamburger-menu" class="hamburger">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Meniu mobil -->
+        <div id="menu-mobile" class="menu-mobile">
+            <div class="menu-close"><i class="fa-solid fa-xmark"></i></div>
+            <div class="lincuri">
+                <a href="../index.html">Acasă</a>
+                <a href="despre.html">Despre noi</a>
+                <a href="vanzari.html">Vânzări</a>
+                <a href="noutati.html">Noutăți</a>
+                <a href="galerie.html">Galerie</a>
+                <a href="contacte.html">Contacte</a>
+            </div>
+        </div>
+
+        <div class="infor noindex">
+
+            <div class="text">
+                <section class="parola">
+
+                    <h1 id="numeUser"></h1>
+
+                    <div id="g_id_onload"
+                        data-client_id="778156860847-acm68jrn7ud3rjqmacejdic6kursk4bf.apps.googleusercontent.com"
+                        data-callback="handleCredentialResponse" data-auto_prompt="false"></div>
+                    <div id="googleSignIn" class="g_id_signin" data-type="standard" data-theme="outline"
+                        data-text="signin_with" data-shape="rectangular">
+                    </div>
+
+                    <div class="butoane">
+                        <a href="admin.html">
+                            <button id="butonSecret" style="display: none; margin-top: 20px;">
+                                Rulează către pagina Admin
+                            </button>
+                        </a>
+
+                        <button id="butonLogout" style="display: none; margin-top: 20px;">
+                            Ieși din contul tău
+                        </button>
+                        <p class="parola-text">Acces la contactare cu google au doar administratorii!</p>
+                    </div>
+
+
+                </section>
+            </div>
+
+        </div>
+    </header>
+
+    <script>
+        const emailuriPermise = [
+            // conturile admise sa se inregistreze
+            "ruxanda.cujba07@gmail.com",
+            "tauleanema@gmail.com"
+        ];
+
+        window.onload = function () {
+            const userEmail = localStorage.getItem("userEmail");
+            const storedName = localStorage.getItem("userName");
+
+            if (emailuriPermise.includes(userEmail)) {
+                document.getElementById("butonSecret").style.display = "inline-block";
+                document.getElementById("butonLogout").style.display = "inline-block";
+                document.getElementById("googleSignIn").style.display = "none";
+                document.getElementById("numeUser").textContent = "Salut, " + storedName + "!";
+            } else {
+                document.getElementById("butonSecret").style.display = "none";
+                document.getElementById("butonLogout").style.display = "none";
+                document.getElementById("googleSignIn").style.display = "block";
+                document.getElementById("numeUser").textContent = "Loghează-te cu contul tău Google ca să accesezi zona de administrare.";
+            }
+        };
+
+        function handleCredentialResponse(response) {
+            const token = response.credential;
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            const email = payload.email;
+
+            if (emailuriPermise.includes(email)) {
+                alert("Bine ai venit, " + payload.name + "!");
+
+                localStorage.setItem("userEmail", email);
+                localStorage.setItem("userName", payload.name);
+
+                document.getElementById("butonSecret").style.display = "inline-block";
+                document.getElementById("butonLogout").style.display = "inline-block";
+                document.getElementById("googleSignIn").style.display = "none";
+                document.getElementById("numeUser").textContent = "Salut, " + payload.name + "!";
+            } else {
+                alert("Acces interzis!");
+            }
+        }
+
+        document.getElementById("butonLogout").addEventListener("click", function () {
+            localStorage.removeItem("userEmail");
+            localStorage.removeItem("userName");
+
+            document.getElementById("butonSecret").style.display = "none";
+            document.getElementById("butonLogout").style.display = "none";
+            document.getElementById("googleSignIn").style.display = "block";
+            document.getElementById("numeUser").textContent = "Loghează-te cu contul tău Google ca să accesezi zona de administrare.";
+        });
+    </script>
+
+
+    <script>
+        // schimbarea culorii din ziua la noapte
+        const toggle = document.querySelector('.toggle input');
+
+        // La încărcare, verific dacă e ceva salvat
+        if (localStorage.getItem('darkMode') === 'on') {
+            document.body.classList.add('dark-mode');
+            toggle.checked = true;
+        } else {
+            document.body.classList.remove('dark-mode');
+            toggle.checked = false;
+        }
+
+        toggle.addEventListener('change', () => {
+            if (toggle.checked) {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'on');  // salvez modul noapte
+            } else {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'off'); // salvez modul zi
+            }
+        });
+
+    </script>
 
 </body>
-<script>
-    function verificaParola() {
-    const parolaCorecta = "ruxanda";
-    const parolaIntrodusa = document.getElementById("parola").value;
-
-    if (parolaIntrodusa === parolaCorecta) {
-        window.location.href = "admin.html";
-    } else {
-        document.getElementById("error").textContent = "Parolă greșită!";
-    }
-}
-
-document.getElementById("parola").addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        verificaParola();
-    }
-});
-
-</script>
 
 </html>

@@ -29,9 +29,12 @@
     <script src="../js/cosnr.js" defer></script>
     <script src="../js/galerie.js" defer></script>
     <script src="../js/hamburgher.js" defer></script>
+
+
+
 </head>
 
-<body>
+<body class="admin">
     <!-- date de contact / informatii -->
     <header class="toate-altele">
         <nav id="bara1" class="info">
@@ -44,6 +47,105 @@
                 </a>
             </div>
             <div class="contact">
+                <label for="toggle" class="toggle">
+                    <input type="checkbox" />
+
+                    <svg viewBox="0 0 100 45" width="100" height="40">
+                        <defs>
+                            <rect id="background" x="0" y="0" width="90" height="35" rx="17.5"></rect>
+
+                            <clipPath id="clip">
+                                <use href="#background"></use>
+                            </clipPath>
+
+                            <linearGradient id="gradient-light" x1="0" x2="0" y1="0" y2="1">
+                                <stop stop-color="#8bc8f2" offset="0"></stop>
+                                <stop stop-color="#fff" offset="1"></stop>
+                            </linearGradient>
+
+                            <filter id="blur-light">
+                                <feGaussianBlur stdDeviation="1"></feGaussianBlur>
+                            </filter>
+
+                            <pattern id="pattern-light" width="0.1" height="1" viewBox="0 0 10 45">
+                                <path fill="#40b5f8" d="M 0 0 a 6 6 0 0 0 10 0 v 45 h -10 z"></path>
+                            </pattern>
+
+                            <linearGradient id="gradient-dark" x1="0" x2="0" y1="0" y2="1">
+                                <stop stop-color="#1F2241" offset="0"></stop>
+                                <stop stop-color="#7D59DF" offset="1"></stop>
+                            </linearGradient>
+                            <linearGradient id="gradient-mask" x1="0" x2="0" y1="0" y2="1">
+                                <stop stop-color="#000" offset="0"></stop>
+                                <stop stop-color="#fff" offset="1"></stop>
+                            </linearGradient>
+                            <mask id="mask-dark">
+                                <use fill="url(#gradient-mask)" href="#background"></use>
+                            </mask>
+                            <radialGradient id="gradient-moon">
+                                <stop stop-color="#fdfdfd" offset="0.7"></stop>
+                                <stop stop-color="#e2e2e2" offset="1"></stop>
+                            </radialGradient>
+
+                            <radialGradient id="gradient-crater">
+                                <stop stop-color="#e0e0e0" offset="0"></stop>
+                                <stop stop-color="#d9d9d9" offset="1"></stop>
+                            </radialGradient>
+                            <pattern id="pattern-dark" width="0.2" height="1" viewBox="0 0 20 45">
+                                <path fill="#fff" d="M 2 5 l 1 1 l -1 1 l -1 -1 l 1 -1"></path>
+                                <path fill="#fff" d="M 10 16 l 1 1 l -1 1 l -1 -1 l 1 -1"></path>
+                                <path fill="#fff" d="M 16 27 l 1 1 l -1 1 l -1 -1 l 1 -1"></path>
+                                <path fill="#fff" d="M 10 38 l 1 1 l -1 1 l -1 -1 l 1 -1"></path>
+                            </pattern>
+                        </defs>
+
+                        <g transform="translate(5 5)">
+                            <g clip-path="url(#clip)">
+                                <g class="dark">
+                                    <use fill="url(#gradient-dark)" href="#background"></use>
+                                    <g class="background" transform="translate(0 -30) scale(1 0.4)">
+                                        <rect transform="translate(-40 0) rotate(4)" fill="url(#pattern-dark)" x="0"
+                                            y="0" width="100" height="45"></rect>
+                                    </g>
+                                    <use mask="url(#mask-dark)" fill="url(#gradient-dark)" href="#background"></use>
+                                </g>
+                                <g class="light">
+                                    <use fill="url(#gradient-light)" href="#background"></use>
+                                    <g class="background" transform="translate(-30 -20)">
+                                        <g transform="translate(30 20)">
+                                            <rect fill="url(#pattern-light)" x="-5" y="27.5" width="100" height="45">
+                                            </rect>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+
+                        <g transform="translate(77.5 22.5)">
+                            <g class="translate" transform="translate(-55)">
+                                <g class="rotate" transform="rotate(-100)">
+                                    <g class="dark">
+                                        <circle fill="url(#gradient-moon)" cx="0" cy="0" r="13"></circle>
+                                        <g transform="translate(-5 -5)">
+                                            <ellipse transform="rotate(-30)" fill="url(#gradient-crater)"
+                                                stroke="#d5d5d5" stroke-width="0.2" cx="0" cy="0" rx="2.5" ry="2">
+                                            </ellipse>
+                                        </g>
+                                        <g transform="translate(7 4)">
+                                            <ellipse fill="url(#gradient-crater)" stroke="#d5d5d5" stroke-width="0.2"
+                                                cx="0" cy="0" rx="2.5" ry="2.8"></ellipse>
+                                        </g>
+                                    </g>
+                                </g>
+                                <g class="light">
+                                    <circle fill="#FFD21F" cx="0" cy="0" r="13" filter="url(#blur-light)"></circle>
+                                    <circle fill="#FFD21F" cx="0" cy="0" r="12"></circle>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </label>
+
                 <a href="parola.html">
                     <h2>Accesează Admin</h2>
                 </a>
@@ -112,90 +214,28 @@
             </div>
 
             <div class="text">
-                <h1>Produsele noastre</h1>
-                <p>Descoperiți produsele noastre, preparate cu pasiune și ingrediente de calitate, pentru un gust
-                    autentic și delicios.
+                <h1>Pagina Administratorului</h1>
+                <p>Aici poți adăuga noutăți și reduceri pentru site. Scrie titlul și descrierea, apoi salvează pentru ca
+                    toți să vadă.
                 </p>
             </div>
 
         </div>
     </header>
 
-    <div class="container">
+    <div id="formular" class="container mai-sus">
         <form method="post" action="" name="contact-form">
-            <h4>Contact Us</h4>
-            <input type="text" name="your-name" placeholder="Name">
-            <input type="text" name="your-number" placeholder="Number">
-            <input type="email" name="your-email" placeholder="Email">
-            <textarea name="message" rows="7" placeholder="Your Message">
-          </textarea>
-            <input type="submit" value="Submit" id="submit">
+            <h4>Înregistează noutăți</h4>
+            <input type="text" name="Titlu" placeholder="Indrodu titlul">
+            <textarea name="Text" rows="7" placeholder="Introdu textul"></textarea>
+            <input class="button" type="submit" value="Publică" id="submit">
         </form>
+        <p>Ca să modifici sau să elimini noutățile, accesează <a
+                href="https://docs.google.com/spreadsheets/d/1t93eicQX3FN5xJpmcVAT1kLZ1GJrkjWQOwfLx-NmP6U/edit?usp=sharing">acest
+                link</a> și fă schimbările manual. Pentru a șterge o
+            noutate, trebuie să ștergi tot rândul cu acea noutate din tabel.
+        </p>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Include Google Identity -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-
-    <!-- Buton de logare -->
-    <div id="g_id_onload" data-client_id="778156860847-acm68jrn7ud3rjqmacejdic6kursk4bf.apps.googleusercontent.com" data-callback="handleCredentialResponse">
-    </div>
-
-    <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline" data-text="signin_with"
-        data-size="large">
-    </div>
-
-
-
-
-    <script>
-        function handleCredentialResponse(response) {
-            const token = response.credential;
-            console.log("JWT Token:", token);
-
-            // Decodare simplă (doar pentru test)
-            const payload = JSON.parse(atob(token.split('.')[1]));
-            console.log("User Info:", payload);
-
-            // Exemplu: afișează numele
-            alert("Bun venit, " + payload.name);
-        }
-    </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <script defer>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwKn90XdTjJfy_AAqZidVQsiq11BPDiNOXHrmu4p3uAhH0i0VFhMJBPl8oZFdkNU5mz/exec'
@@ -207,17 +247,22 @@
             e.preventDefault()
 
             fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => alert("Thank you! Form is submitted"))
+                .then(response => alert("Noutatea a fost publicată cu succes!"))
                 .then(() => { window.location.reload(); })
-                .catch(error => console.error('Error!', error.message))
+                .catch(error => console.error('Eroare!', error.message))
         }) 
     </script>
-    <form id="discount-form">
-        <input type="text" id="title" placeholder="Titlu Reducere" required />
-        <textarea id="description" placeholder="Descriere Reducere" required></textarea>
-        <input type="datetime-local" id="end-time" required />
-        <button type="submit">Salvează Reducerea</button>
-    </form>
+
+    <!-- <section class="inregis-reducere">
+        <form id="discount-form">
+            <h4>Înregistează reducerea</h4>
+            <input type="text" id="title" placeholder="Titlu" required />
+            <textarea id="description" placeholder="Descriere" required></textarea>
+            <input type="datetime-local" id="end-time" required />
+            <button class="button" type="submit">Salvează Reducerea</button>
+        </form>
+    </section>
+
 
     <script>
         document.getElementById("discount-form").addEventListener("submit", function (e) {
@@ -231,7 +276,7 @@
             localStorage.setItem("discount", JSON.stringify({ title, description, endTime }));
             alert("Reducerea a fost salvată!");
         });
-    </script>
+    </script> -->
 
     <button id="scrollToTopBtn">
         <i class="fa-solid fa-arrow-up"></i>

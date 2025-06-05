@@ -3,6 +3,7 @@
 .acum {
     color: #ffffff;
     text-shadow: 0px 0px 10px black;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 * {
@@ -99,7 +100,7 @@ header nav.bara div i {
 
 header nav.bara div.link a {
     text-decoration: none;
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 23px;
     font-weight: 300;
     font-style: normal;
@@ -148,6 +149,426 @@ header nav.bara .product .cos .nr {
     right: -10px;
 }
 
+
+
+
+label.toggle {
+    position: relative;
+}
+
+label.toggle input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+label.toggle input+svg .light {
+    transition: opacity 0.75s cubic-bezier(0.68, 0.25, 0.265, 1);
+}
+
+label.toggle input+svg .translate,
+label.toggle input+svg .rotate,
+label.toggle input+svg .background {
+    transition: transform 0.75s cubic-bezier(0.68, 0.25, 0.265, 1);
+}
+
+label.toggle input:checked+svg .light {
+    opacity: 0;
+}
+
+label.toggle input:checked+svg .translate {
+    transform: translateX(0);
+}
+
+label.toggle input:checked+svg .rotate {
+    transform: rotate(0deg);
+}
+
+label.toggle input:checked+svg .background {
+    transform: translate(0) scale(1);
+}
+
+
+
+
+
+/* culorile la noapte */
+body.dark-mode header {
+    background-image: none;
+}
+
+body.dark-mode header nav * {
+    color: #ffffff;
+}
+
+body.dark-mode header .infor h1 {
+    color: #ffffff;
+}
+
+body.dark-mode header .infor p {
+    color: #ffffff;
+}
+
+body.dark-mode header .infor .buton {
+    background-color: #ff7400;
+    color: #ffffff;
+}
+
+body.dark-mode header .infor .buton:hover {
+    border: 1px solid #ff7400;
+    background-color: transparent;
+}
+
+body.dark-mode #bara2.scrolled {
+    background: #ff7400;
+}
+
+body.dark-mode {
+    background-color: #000000;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode p,
+body.dark-mode a {
+    color: #ffffff !important;
+}
+
+body.dark-mode section.mini-poze .text .buton {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+body.dark-mode section.mini-poze .text .buton:hover {
+    border: 2px solid #ff7400;
+    color: #ffffff;
+}
+
+body.dark-mode section.mini-poze .linie {
+    background-color: #ff7400;
+}
+
+body.dark-mode footer {
+    background-color: #ff7400;
+    color: #ffffff;
+}
+
+body.dark-mode section.istorie {
+    background-color: #ff9e4d;
+}
+
+body.dark-mode .menu-mobile {
+    background-color: #ff7400;
+}
+
+
+body.dark-mode .acum {
+    color: #ff7400;
+}
+
+
+body.dark-mode .slaid-buton:hover,
+body.dark-mode .slaid-buton.active {
+    background-color: transparent;
+    color: #ff7400;
+}
+
+body.dark-mode .mini-info {
+    background-color: #ff7400;
+    color: #ffffff;
+}
+
+body.dark-mode .slaid-buton {
+    color: #ffffff;
+}
+
+body.dark-mode header .infor.noindex .text {
+    color: #ffffff;
+}
+
+body.dark-mode section.receta h1.denumire span {
+    color: #ff7400;
+}
+
+body.dark-mode .conteiner div {
+    background-color: #ffffff;
+    color: #000000 !important;
+}
+
+body.dark-mode section.link .rel {
+    background-color: #ff7400;
+}
+
+body.dark-mode section.link .rel .infor button {
+    background-color: #ffffff;
+    color: #000000 !important;
+}
+
+body.dark-mode section.link .rel .infor button p {
+    color: #000000;
+}
+
+body.dark-mode section.excelenta {
+    background-color: transparent;
+}
+
+body.dark-mode section.excelenta .text h4 {
+    color: #ffffff;
+}
+
+body.dark-mode section.excelenta .text h1 {
+    color: #ffffff !important;
+}
+
+body.dark-mode section.excelenta .text .boxe div {
+    background-color: #ff7400;
+}
+
+body.dark-mode section.excelenta .text .boxe div div {
+    background-color: #000000;
+}
+
+body.dark-mode section.excelenta .text .boxe div h1 {
+    color: #ffffff;
+}
+
+body.dark-mode section.excelenta .text h1 {
+    color: #ffffff;
+}
+
+body.dark-mode section.vanzari h1 span {
+    color: #ff7400;
+}
+
+body.dark-mode .button2 {
+    color: #000000;
+    background-color: #ff7400;
+}
+
+body.dark-mode .button2:hover {
+    background-color: transparent;
+    border: 1px solid #ff7400;
+}
+
+body.dark-mode section.date .sect.unu .info .text {
+    color: #ffffff;
+}
+
+body.dark-mode section.date .sect.unu .info .logo {
+    background-color: #ff7400;
+    color: #000000;
+}
+
+body.dark-mode section.date .sect .info .logo {
+    background-color: #ff7400;
+    color: #000000;
+}
+
+body.dark-mode .button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: #ff7400;
+    color: #000000;
+    border: 2px solid #ff7400;
+    border-radius: 25px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .button:hover {
+    background-color: #ff7400;
+    border-color: #ff7400;
+    transform: scale(1.05);
+}
+
+body.dark-mode .button:active {
+    background-color: #ff7400;
+    transform: scale(1);
+}
+
+body.dark-mode section#transport {
+    margin-top: -40px;
+}
+
+
+body.dark-mode section#transport,
+body.dark-mode section#ambalare,
+body.dark-mode section#calitate,
+body.dark-mode section#program {
+    background-color: transparent;
+}
+
+body.dark-mode section#transport .contain div.continut {
+    background-color: #ff7400;
+}
+
+body.dark-mode section#transport .contain div.continut h3 {
+    color: #000;
+}
+
+body.dark-mode section#transport .contain div.continut p {
+    color: #000;
+}
+
+body.dark-mode section#transport .contain div.continut .imag {
+    background-color: #000;
+}
+
+body.dark-mode section#transport .contain div.continut div:hover {
+    color: #ff7400;
+}
+
+body.dark-mode section#ambalare .contain div,
+body.dark-mode section#calitate .contain div,
+body.dark-mode section#program .contain div {
+    background-color: #ff7400;
+}
+
+body.dark-mode section#ambalare .contain div h3,
+body.dark-mode section#calitate .contain div h3,
+body.dark-mode section#program .contain div h3 {
+    color: #000;
+}
+
+body.dark-mode section#ambalare .contain div p,
+body.dark-mode section#calitate .contain div p,
+body.dark-mode section#program .contain div p {
+    color: #000;
+}
+
+body.dark-mode section#ambalare .contain div i,
+body.dark-mode section#calitate .contain div i,
+body.dark-mode section#program .contain div i {
+    color: #000;
+}
+
+body.dark-mode section#ambalare .contain div:hover i,
+body.dark-mode section#calitate .contain div:hover i,
+body.dark-mode section#program .contain div:hover i {
+    color: #ff7400;
+}
+
+body.dark-mode section#ambalare .contain div:hover,
+body.dark-mode section#calitate .contain div:hover,
+body.dark-mode section#program .contain div:hover {
+    background-color: #202020;
+    color: #000000 !important;
+}
+
+body.dark-mode .noutat {
+    background-color: #ff7400;
+}
+
+body.dark-mode #formular form input,
+body.dark-mode #formular form textarea {
+    color: #000000;
+    background-color: #e6e6e6;
+}
+
+body.dark-mode #formular form .button {
+    background-color: #ff7400;
+    color: #000000;
+    border: 2px solid #ff7400;
+}
+
+body.dark-mode #formular form .button:hover {
+    background-color: #ff7400;
+    border-color: #ff7400;
+}
+
+body.dark-mode #formular form .button:active {
+    background-color: #ff7400;
+}
+
+body.dark-mode #formular p a {
+    color: #ff7400;
+}
+
+body.dark-mode section.inregis-reducere form#discount-form h4 {
+    color: #000000;
+}
+
+body.dark-mode section.inregis-reducere form#discount-form input,
+body.dark-mode section.inregis-reducere form#discount-form textarea {
+    color: #666666;
+    background-color: #e6e6e6;
+}
+
+
+body.dark-mode section.inregis-reducere form#discount-form .button {
+    background-color: #ff7400;
+    color: #000000;
+    border: 2px solid #ff7400;
+}
+
+body.dark-mode section.inregis-reducere form#discount-form .button:hover {
+    background-color: #ff7400;
+    border-color: #ff7400;
+}
+
+body.dark-mode section.inregis-reducere form#discount-form .button:active {
+    background-color: #ff7400;
+}
+
+body.dark-mode .mai-sus {
+    margin-top: -50px !important;
+}
+
+body.dark-mode section.oferte .toate-ofertele .oferta {
+    background-color: #ff7400;
+    color: #000000;
+}
+
+body.dark-mode header .infor.noindex.vanzari {
+    display: none;
+}
+
+body.dark-mode section.vanzari {
+    margin-top: -170px;
+}
+
+
+
+body.dark-mode {
+    background: #000000;
+}
+
+body.dark-mode section.parola {
+    background-color: #ff7400;
+}
+
+body.dark-mode section.parola .butoane button {
+    background-color: #333333;
+    color: #ffffff;
+    border: 2px solid #ff7400;
+}
+
+body.dark-mode section.parola .butoane button:hover {
+    background-color: #ffffff;
+    color: #ff7400;
+}
+
+
+
+
+.parola-text {
+    width: 90% !important;
+}
+
+
+
+
+
 .hamburger {
     display: none !important;
 }
@@ -162,7 +583,7 @@ header .infor {
 
 header .infor h1 {
     color: #383838;
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 1000;
     font-size: 45px;
     margin-left: -5px;
@@ -170,14 +591,14 @@ header .infor h1 {
 
 header .infor h3 {
     color: #ffaa00;
-    font-family: "Inika";
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 100;
     font-size: 30px;
     margin: 7px 0;
 }
 
 header .infor p {
-    font-family: "Inika";
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 100;
     font-size: 19px;
     width: 500px;
@@ -193,7 +614,7 @@ header .infor .buton {
     justify-content: center;
     border-radius: 10px;
     margin-top: 10px;
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 100;
     font-size: 15px;
     color: #000000;
@@ -314,7 +735,7 @@ section#despre {
 
 section#despre h1 {
     color: #383838;
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-style: normal;
     line-height: 55px;
@@ -323,7 +744,7 @@ section#despre h1 {
 }
 
 section#despre p {
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 20px;
@@ -349,13 +770,6 @@ section#despre .text .text-right {
     flex: 1;
 }
 
-section#despre .text .vertical-linie {
-    width: 5px;
-    background-color: #ffd983;
-    height: auto;
-    margin: 0 30px;
-    border-radius: 18px;
-}
 
 
 /* servicii */
@@ -370,7 +784,7 @@ section#despre .text .vertical-linie {
 
 .servicii h2 {
     color: #383838;
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     line-height: 55px;
     font-size: 30px;
@@ -435,10 +849,10 @@ section#despre .text .vertical-linie {
 
 .info h3 {
     color: #ffffff;
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     line-height: 45px;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .info p {
@@ -471,7 +885,7 @@ section.istorie .info {
 }
 
 section.istorie .info h2 {
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-style: normal;
     line-height: 55px;
@@ -480,7 +894,7 @@ section.istorie .info h2 {
 }
 
 section.istorie .info p {
-    font-family: "Merriweather";
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 20px;
@@ -522,7 +936,7 @@ section.informatii .container img {
 }
 
 section.informatii .container h3 {
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-style: normal;
     line-height: 25px;
@@ -531,7 +945,7 @@ section.informatii .container h3 {
 }
 
 section.informatii .container p {
-    font-family: "Merriweather";
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 20px;
@@ -555,7 +969,7 @@ section.mini-poze .text {
 
 section.mini-poze .text h2 {
     color: #000000;
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-style: normal;
     line-height: 30px;
@@ -567,16 +981,17 @@ section.mini-poze .text h2 {
 section.mini-poze .text .buton {
     background-color: #333333;
     color: #ffd983;
-    width: 120px;
+    width: 150px !important;
     height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-style: normal;
     font-size: 15px;
+    margin-bottom: 5px;
     border-radius: 18px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
@@ -657,7 +1072,7 @@ footer {
     background-color: #ffd061;
     color: #000;
     padding: 40px 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .footer-container {
@@ -826,7 +1241,7 @@ section.info {
     border: none;
     cursor: pointer;
     background-color: transparent;
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 750;
     font-style: normal;
     font-size: 20px;
@@ -1039,7 +1454,7 @@ header .infor div.poz div.patru {
 }
 
 .beneficii h1 {
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-style: normal;
     line-height: 30px;
@@ -1107,7 +1522,7 @@ header .infor div.poz div.patru {
 }
 
 .slide h2 {
-    font-family: "Iika", serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-style: normal;
     line-height: 25px;
@@ -1121,7 +1536,7 @@ header .infor div.poz div.patru {
 }
 
 .slide p {
-    font-family: "Merriweather";
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 15px;
@@ -1165,9 +1580,98 @@ header .infor div.poz div.patru {
 }
 
 
+
+
+
+
+
+
+.testimonial-section {
+    padding: 100px 15% 50px;
+    text-align: center;
+}
+
+.testimonial-section h2 {
+    font-weight: 800;
+    font-style: normal;
+    line-height: 30px;
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #383838;
+}
+
+.testimonial-section .slider-wrapper {
+    overflow: hidden;
+    margin: 0 60px 50px;
+}
+
+.testimonial-section .testimonial {
+    user-select: none;
+    display: flex;
+    padding: 35px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonial-section .testimonial .user-image {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 50px;
+    border-radius: 50%;
+}
+
+.testimonial-section .testimonial .name {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.testimonial-section .testimonial .feedback {
+    line-height: 25px;
+}
+
+.testimonial-section .swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    opacity: 1;
+    background: #ffd061;
+}
+
+.testimonial-section .swiper-slide-button {
+    margin-top: -50px;
+    color: #ffd061;
+    transition: 0.3s ease;
+}
+
+.testimonial-section .swiper-slide-button:hover {
+    color: #ffd061;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* cum facem noi branzaturile noastre */
 section.receta {
-    margin-top: 300px;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1177,7 +1681,7 @@ section.receta {
 }
 
 section.receta h1.denumire {
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-style: normal;
     line-height: 30px;
@@ -1289,7 +1793,7 @@ section.receta h1.denumire span {
 }
 
 .conteiner div p {
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-style: normal;
     line-height: 40px;
@@ -1299,7 +1803,7 @@ section.receta h1.denumire span {
 }
 
 .conteiner h1 {
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-style: normal;
     line-height: 30px;
@@ -1308,7 +1812,7 @@ section.receta h1.denumire span {
 }
 
 .conteiner p {
-    font-family: "Merriweather";
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 15px;
@@ -1330,7 +1834,7 @@ section.oferte {
 }
 
 section.oferte h1.denumire {
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-style: normal;
     line-height: 35px;
@@ -1386,7 +1890,7 @@ section.oferte .toate-ofertele .oferta .triunghi-stanga {
 }
 
 section.oferte .toate-ofertele .oferta h1 {
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-style: normal;
     line-height: 20px;
@@ -1395,7 +1899,7 @@ section.oferte .toate-ofertele .oferta h1 {
 }
 
 section.oferte .toate-ofertele .oferta p {
-    font-family: "Merriweather";
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
@@ -1451,7 +1955,7 @@ section.link .rel .infor {
 }
 
 section.link .rel .infor p {
-    font-family: "Iika", serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-style: normal;
     font-size: 17px;
@@ -1459,7 +1963,7 @@ section.link .rel .infor p {
 }
 
 section.link .rel .infor h1 {
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-style: normal;
     line-height: 40px;
@@ -1485,7 +1989,7 @@ section.link .rel .infor button {
 }
 
 section.link .rel .infor button p {
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-size: 15px;
     margin-top: -4px;
@@ -1534,7 +2038,7 @@ section.excelenta .text {
 }
 
 section.excelenta .text h4 {
-    font-family: "Iika", serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-style: normal;
     line-height: 25px;
@@ -1571,7 +2075,7 @@ section.excelenta .text .boxe div div {
 }
 
 section.excelenta .text .boxe div h1 {
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-size: 15px;
     margin-top: -4px;
@@ -1580,7 +2084,7 @@ section.excelenta .text .boxe div h1 {
 }
 
 section.excelenta .text h1 {
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-style: normal;
     line-height: 40px;
@@ -1665,7 +2169,7 @@ section.salvari {
 section.vanzari h1,
 section.cos h1,
 section.salvari h1 {
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-style: normal;
     line-height: 40px;
@@ -1719,7 +2223,7 @@ section.salvari .box img {
 section.vanzari .box h3,
 section.cos .box h3,
 section.salvari .box h3 {
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
     font-style: normal;
     line-height: 30px;
@@ -1738,7 +2242,7 @@ section.salvari .box .precos {
 section.vanzari .box .precos h2,
 section.cos .box .precos h2,
 section.salvari .box .precos h2 {
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
     font-style: normal;
     text-align: start;
@@ -1805,7 +2309,7 @@ section.salvari .box button {
     border-radius: 10px;
     color: #00ff1a;
     cursor: pointer;
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-style: normal;
     font-size: 20px;
@@ -1819,7 +2323,7 @@ section.cos .box button:hover {
 
 /* Stiluri pentru numărul de produse */
 .quantity {
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
     font-size: 15px;
     margin-top: -10px;
@@ -1948,7 +2452,7 @@ section.date .sect.unu .info .text {
 }
 
 section.date .sect.unu .info .text h2 {
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-style: normal;
     font-size: 15px;
@@ -1956,7 +2460,7 @@ section.date .sect.unu .info .text h2 {
 }
 
 section.date .sect.unu .info .text p {
-    font-family: "Inter", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-optical-sizing: auto;
     font-weight: 800;
     font-style: normal;
@@ -1990,7 +2494,7 @@ section.date .sect .info .text {
 }
 
 section.date .sect .info .text h2 {
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-style: normal;
     font-size: 15px;
@@ -1998,7 +2502,7 @@ section.date .sect .info .text h2 {
 }
 
 section.date .sect .info .text p {
-    font-family: "Inter", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-optical-sizing: auto;
     font-weight: 800;
     font-style: normal;
@@ -2078,7 +2582,7 @@ section.contactare {
 }
 
 .contact-left-title h2 {
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-style: normal;
     font-size: 30px;
@@ -2111,7 +2615,7 @@ textarea {
 .button {
     padding: 12px 24px;
     font-size: 16px;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     background-color: #ffd983;
     color: #000000;
@@ -2158,7 +2662,7 @@ section.maps {
 }
 
 section.maps h1 {
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-style: normal;
     font-size: 30px;
@@ -2195,14 +2699,13 @@ section#transport {
     flex-direction: column;
     align-items: center;
     margin: 50px 100px;
-    background-color: #fff;
     border-radius: 15px;
     padding: 40px 20px;
 }
 
 section#transport h1 {
     font-size: 30px;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     color: #333333;
     margin-bottom: 20px;
@@ -2238,13 +2741,13 @@ section#transport .contain div.continut:hover {
 
 section#transport .contain div.continut h3 {
     font-size: 1.2em;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     color: #333;
 }
 
 section#transport .contain div.continut p {
-    font-family: 'Inter', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: #333;
     line-height: 1.5;
@@ -2282,14 +2785,13 @@ section#ambalare {
     flex-direction: column;
     align-items: center;
     margin: 50px 100px;
-    background-color: #fff;
     border-radius: 15px;
     padding: 40px 20px;
 }
 
 section#ambalare h1 {
     font-size: 30px;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     color: #333;
     margin-bottom: 30px;
@@ -2323,13 +2825,13 @@ section#ambalare .contain div:hover {
 
 section#ambalare .contain div h3 {
     font-size: 1.2em;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     color: #333;
 }
 
 section#ambalare .contain div p {
-    font-family: 'Inter', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: #333;
     line-height: 1.5;
@@ -2357,14 +2859,13 @@ section#calitate {
     flex-direction: column;
     align-items: center;
     margin: 50px 100px;
-    background-color: #fff;
     border-radius: 15px;
     padding: 40px 20px;
 }
 
 section#calitate h1 {
     font-size: 30px;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     color: #333;
     margin-bottom: 30px;
@@ -2398,13 +2899,13 @@ section#calitate .contain div:hover {
 
 section#calitate .contain div h3 {
     font-size: 1.2em;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     color: #333;
 }
 
 section#calitate .contain div p {
-    font-family: 'Inter', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: #333;
     line-height: 1.5;
@@ -2432,14 +2933,13 @@ section#program {
     flex-direction: column;
     align-items: center;
     margin: 50px 100px;
-    background-color: #fff;
     border-radius: 15px;
     padding: 40px 20px;
 }
 
 section#program h1 {
     font-size: 30px;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     color: #333;
     margin-bottom: 30px;
@@ -2473,13 +2973,13 @@ section#program .contain div:hover {
 
 section#program .contain div h3 {
     font-size: 1.2em;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     color: #333;
 }
 
 section#program .contain div p {
-    font-family: 'Inter', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: #333;
     line-height: 1.5;
@@ -2603,67 +3103,6 @@ section.galerie img:hover {
 
 
 
-/* NOUTATI */
-section.noutati {
-    margin: 50px 250px;
-}
-
-section.noutati h1 {
-    font-size: 30px;
-    font-family: 'Arial', sans-serif;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-
-section.noutati .news-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-section.noutati .news-container .news-item {
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    color: #333333 !important;
-}
-
-section.noutati .news-container .news-item h2 {
-    margin: 0 0 10px;
-    font-size: 30px;
-    font-family: 'Inter';
-    font-weight: 600;
-    color: #d2960a;
-}
-
-section.noutati .news-container .news-item p {
-    margin: 0 0 10px;
-    font-size: 1.1em;
-    line-height: 1.2;
-    font-family: 'Inter';
-}
-
-section.noutati .news-container .news-item .image-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-section.noutati .news-container .news-item .image-container img,
-section.noutati .news-container .news-item .image-container video,
-section.noutati .news-container .news-item .image-container iframe {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-}
-
-section.noutati .news-container .news-item .date {
-    font-size: 0.9em;
-    text-align: right;
-}
 
 
 #bara2.scrolled .product .nr {
@@ -2694,82 +3133,301 @@ input[type="number"]::-webkit-outer-spin-button {
 
 
 /* parola si adminul */
-body.parola {
+#numeUser {
+    font-size: 20px;
+}
+section.parola {
+    background-color: #ffd061;
+    width: 400px;
+    height: 250px;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 100px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
-    background-color: #f2f2f2;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-body.parola .par {
+section.parola .butoane {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    background-color: #ffd983;
-    width: 400px;
-    height: 200px;
-    border-radius: 20px;
-    gap: 10px;
+    gap: 5px;
+    width: 100%;
 }
 
-body.parola .par input[type="password"] {
-    padding: 10px 15px;
-    font-size: 16px;
-    border: 2px solid #ccc;
-    border-radius: 30px;
-    outline: none;
-    width: 250px;
-    transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-body.parola .par input[type="password"]:focus {
-    border-color: #d2960a;
-    box-shadow: 0 0 5px #d2960a;
-}
-
-body.parola .par button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #d2960a;
-    color: white;
-    border: none;
-    border-radius: 30px;
+section.parola .butoane button {
+    background-color: #333333;
+    color: #ffffff;
+    border: 2px solid #ffd061;
+    padding: 10px 10px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    margin-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.2s ease;
+    margin: 0 !important;
 }
 
-body.parola .par button:hover {
-    background-color: #815c05;
+section.parola .butoane a {
+    width: 100%;
+    max-width: 300px;
 }
 
-body.parola .par #error {
-    color: red;
-    margin-top: 10px;
+section.parola .butoane button:hover {
+    background-color: #ffffff;
+    color: #ffd061;
 }
 
 
 
 
-.card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* NOUTATI */
+#card-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 50px 0;
+}
+
+.noutat {
+    background-color: #ffd061;
+    border-radius: 15px;
     padding: 15px;
-    margin: 15px 0;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.card h3 {
-    margin: 0 0 10px;
+.noutat-tit {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0 0 0;
 }
 
-.card p {
+.noutat:hover {
+    transform: scale(1.01);
+}
+
+.noutat h3 {
+    font-size: 28px;
+    font-weight: 800;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.noutat p {
     margin: 5px 0;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+.section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-in-out;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+
+
+#formular {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#formular form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 10px;
+    margin: 50px 0;
+}
+
+#formular form h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 30px;
+    display: inline-block;
+    position: relative;
+    color: #000000;
+}
+
+#formular form input,
+#formular form textarea {
+    width: 110vh;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: #000000;
+    background-color: #e6e6e6;
+    border-radius: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#formular form textarea {
+    height: 140px;
+    padding-top: 15px;
+    border-radius: 1.25rem;
+}
+
+#formular form .button {
+    width: auto;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: #ffd061;
+    color: #000000;
+    border: 2px solid #ffd061;
+    border-radius: 25px;
+    cursor: pointer;
+    text-align: start;
+    transition: all 0.3s ease;
+}
+
+#formular form .button:hover {
+    background-color: #ffd061;
+    border-color: #ffd061;
+    transform: scale(1.05);
+}
+
+#formular form .button:focus {
+    outline: none;
+}
+
+#formular form .button:active {
+    background-color: #ffd061;
+    transform: scale(1);
+}
+
+#formular p {
+    text-align: start;
+    width: 110vh;
+    margin-bottom: 50px;
+}
+
+#formular p a {
+    color: #ffaa00;
+}
+
+
+section.inregis-reducere {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section.inregis-reducere form#discount-form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+section.inregis-reducere form#discount-form h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 30px;
+    display: inline-block;
+    position: relative;
+    color: #000000;
+}
+
+section.inregis-reducere form#discount-form input,
+section.inregis-reducere form#discount-form textarea {
+    width: 110vh;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: #666666;
+    background-color: #e6e6e6;
+    border-radius: 50px;
+}
+
+section.inregis-reducere form#discount-form textarea {
+    height: 140px;
+    padding-top: 15px;
+    border-radius: 1.25rem;
+}
+
+section.inregis-reducere form#discount-form .button {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: #ffd061;
+    color: #000000;
+    border: 2px solid #ffd061;
+    border-radius: 25px;
+    cursor: pointer;
+    text-align: start;
+    transition: all 0.3s ease;
+}
+
+section.inregis-reducere form#discount-form .button:hover {
+    background-color: #ffd061;
+    border-color: #ffd061;
+    transform: scale(1.05);
+}
+
+section.inregis-reducere form#discount-form .button:focus {
+    outline: none;
+}
+
+section.inregis-reducere form#discount-form .button:active {
+    background-color: #ffd061;
+    transform: scale(1);
+}
 
 
 
@@ -3293,7 +3951,7 @@ body.parola .par #error {
     }
 
     section.excelenta .text .boxe div h1 {
-        font-family: serif;
+        font-family: Arial, Helvetica, sans-serif;
         font-weight: 800;
         font-size: 15px;
         margin-top: -4px;
@@ -3302,7 +3960,7 @@ body.parola .par #error {
     }
 
     section.excelenta .text h1 {
-        font-family: serif;
+        font-family: Arial, Helvetica, sans-serif;
         font-weight: 800;
         font-style: normal;
         line-height: 50px;
@@ -3853,7 +4511,13 @@ body.parola .par #error {
 
 
 
+    .testimonial-section .slider-wrapper {
+        margin: 0 0 30px;
+    }
 
+    .testimonial-section .swiper-slide-button {
+        display: none;
+    }
 
 
 
@@ -4251,7 +4915,7 @@ body.parola .par #error {
         border: none;
         cursor: pointer;
         background-color: transparent;
-        font-family: serif;
+        font-family: Arial, Helvetica, sans-serif;
         font-weight: 750;
         font-style: normal;
         font-size: 10px;
@@ -4505,7 +5169,7 @@ body.parola .par #error {
     }
 
     section.date .la-mobil .info .text h2 {
-        font-family: serif;
+        font-family: Arial, Helvetica, sans-serif;
         font-weight: 800;
         font-style: normal;
         font-size: 15px;
@@ -4513,7 +5177,7 @@ body.parola .par #error {
     }
 
     section.date .la-mobil .info .text p {
-        font-family: "Inter", sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
         font-optical-sizing: auto;
         font-weight: 800;
         font-style: normal;
@@ -4564,7 +5228,7 @@ body.parola .par #error {
     .button {
         padding: 5px 15px;
         font-size: 14px;
-        font-family: 'Arial', sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
         background-color: #ffd983;
         color: #000000;
@@ -4617,7 +5281,7 @@ body.parola .par #error {
 
     section#transport h1 {
         font-size: 30px;
-        font-family: 'Arial', sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
         font-weight: 600;
         color: #333;
         margin-bottom: 30px;
@@ -4646,13 +5310,13 @@ body.parola .par #error {
 
     section#transport .contain div.continut h3 {
         font-size: 15px;
-        font-family: 'Arial', sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
         font-weight: 600;
         color: #333;
     }
 
     section#transport .contain div.continut p {
-        font-family: 'Inter', sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
         font-size: 10px;
         color: #333;
         line-height: 1.5;
@@ -4758,4 +5422,17 @@ body.parola .par #error {
         padding-top: 10%;
         margin-left: 2%;
     }
+}
+
+
+
+
+
+
+* {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+i {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
 }

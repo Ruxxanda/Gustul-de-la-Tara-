@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     window.addEventListener("scroll", revealSections);
-    revealSections(); // Verifică secțiunile la încărcare
+    revealSections();
 });
 
 
@@ -170,45 +170,24 @@ async function toggleFavorite(icon) {
 
 
 
+// schimbarea culorii din ziua la noapte
+const toggle = document.querySelector('.toggle input');
 
+// La încărcare, verific dacă e ceva salvat
+if (localStorage.getItem('darkMode') === 'on') {
+  document.body.classList.add('dark-mode');
+  toggle.checked = true;
+} else {
+  document.body.classList.remove('dark-mode');
+  toggle.checked = false;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-// import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
-
-// const db = getDatabase();
-// const produseRef = ref(db, "produse");
-
-// onValue(produseRef, (snapshot) => {
-//   const container = document.querySelector(".toate-box");
-//   container.innerHTML = ""; // curățăm înainte
-//   const produse = snapshot.val();
-
-//   for (let id in produse) {
-//     const produs = produse[id];
-
-//     container.innerHTML += `
-//       <div class="box" data-id="${id}">
-//         <img src="../${produs.imagine}">
-//         <h3>${produs.nume}</h3>
-//         <div class="precos">
-//             <h2>${produs.pret}<span>/1kg</span></h2>
-//             <div class="buton-favorite">
-//                 <i class="fa-solid fa-heart" onclick="toggleFavorite(this)"></i>
-//             </div>
-//             <button onclick="addToCart(this)" class="add-cos">
-//                 <i class="fa-solid fa-cart-shopping"></i>
-//             </button>
-//         </div>
-//       </div>`;
-//   }
-// });
+toggle.addEventListener('change', () => {
+  if (toggle.checked) {
+    document.body.classList.add('dark-mode');
+    localStorage.setItem('darkMode', 'on');  // salvez modul noapte
+  } else {
+    document.body.classList.remove('dark-mode');
+    localStorage.setItem('darkMode', 'off'); // salvez modul zi
+  }
+});
