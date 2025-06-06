@@ -298,7 +298,9 @@
         <div class="continut">
             <div class="text">
                 <h2>Reducere <span id="procent"></span>% la produsele noastre!</h2>
-                <button>Vezi acum!</button>
+                <a href="./pages/vanzari.html">
+                    <button>Vezi acum!</button>
+                </a>
             </div>
             <div class="timer">
                 <p>Promoția expiră în:</p>
@@ -318,57 +320,57 @@
 
 
     <script>
-       async function incarcaReducere() {
-    const sheetUrl = 'https://opensheet.vercel.app/1Odo0i3CKnTsHYTWTixAftioRrH__1juGylUMDU1hZ-A/Reduceri';
+        async function incarcaReducere() {
+            const sheetUrl = 'https://opensheet.vercel.app/1Odo0i3CKnTsHYTWTixAftioRrH__1juGylUMDU1hZ-A/Reduceri';
 
-    const raspuns = await fetch(sheetUrl);
-    const date = await raspuns.json();
+            const raspuns = await fetch(sheetUrl);
+            const date = await raspuns.json();
 
-    const procentSpan = document.getElementById('procent');
-    const durataSpan = document.getElementById('durata');
-    const sectiuneReducere = document.querySelector('.reducere');
+            const procentSpan = document.getElementById('procent');
+            const durataSpan = document.getElementById('durata');
+            const sectiuneReducere = document.querySelector('.reducere');
 
-    // Dacă nu există date sau sunt incomplete
-    if (!date || date.length === 0 || !date[0]['procente'] || !date[0]['sfarsit']) {
-        sectiuneReducere.style.display = 'none';
-        return;
-    }
+            // Dacă nu există date sau sunt incomplete
+            if (!date || date.length === 0 || !date[0]['procente'] || !date[0]['sfarsit']) {
+                sectiuneReducere.style.display = 'none';
+                return;
+            }
 
-    const rand = date[0];
-    const procent = rand['procente'];
-    const sfarsit = new Date(rand['sfarsit']);
+            const rand = date[0];
+            const procent = rand['procente'];
+            const sfarsit = new Date(rand['sfarsit']);
 
-    // Afișăm procentul
-    procentSpan.textContent = procent;
+            // Afișăm procentul
+            procentSpan.textContent = procent;
 
-    function update() {
-        const acum = new Date();
-        const diff = sfarsit - acum;
+            function update() {
+                const acum = new Date();
+                const diff = sfarsit - acum;
 
-        if (diff <= 0) {
-            durataSpan.textContent = '';
-        } else {
-            const totalSecunde = Math.floor(diff / 1000);
-            const h = Math.floor(totalSecunde / 3600).toString().padStart(2, '0');
-            const m = Math.floor((totalSecunde % 3600) / 60).toString().padStart(2, '0');
-            const s = (totalSecunde % 60).toString().padStart(2, '0');
-            durataSpan.textContent = `${h}:${m}:${s}`;
+                if (diff <= 0) {
+                    durataSpan.textContent = '';
+                } else {
+                    const totalSecunde = Math.floor(diff / 1000);
+                    const h = Math.floor(totalSecunde / 3600).toString().padStart(2, '0');
+                    const m = Math.floor((totalSecunde % 3600) / 60).toString().padStart(2, '0');
+                    const s = (totalSecunde % 60).toString().padStart(2, '0');
+                    durataSpan.textContent = `${h}:${m}:${s}`;
+                }
+
+                // Ascundem secțiunea dacă oricare span e gol
+                if (!procentSpan.textContent.trim() || !durataSpan.textContent.trim()) {
+                    sectiuneReducere.style.display = 'none';
+                } else {
+                    sectiuneReducere.style.display = 'block';
+                }
+            }
+
+            // Prima verificare + start countdown
+            update();
+            setInterval(update, 1000);
         }
 
-        // Ascundem secțiunea dacă oricare span e gol
-        if (!procentSpan.textContent.trim() || !durataSpan.textContent.trim()) {
-            sectiuneReducere.style.display = 'none';
-        } else {
-            sectiuneReducere.style.display = 'block';
-        }
-    }
-
-    // Prima verificare + start countdown
-    update();
-    setInterval(update, 1000);
-}
-
-incarcaReducere();
+        incarcaReducere();
 
 
     </script>
