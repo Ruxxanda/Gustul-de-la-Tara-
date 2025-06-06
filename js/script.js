@@ -175,19 +175,72 @@ const toggle = document.querySelector('.toggle input');
 
 // La încărcare, verific dacă e ceva salvat
 if (localStorage.getItem('darkMode') === 'on') {
-  document.body.classList.add('dark-mode');
-  toggle.checked = true;
+    document.body.classList.add('dark-mode');
+    toggle.checked = true;
 } else {
-  document.body.classList.remove('dark-mode');
-  toggle.checked = false;
+    document.body.classList.remove('dark-mode');
+    toggle.checked = false;
 }
 
 toggle.addEventListener('change', () => {
-  if (toggle.checked) {
-    document.body.classList.add('dark-mode');
-    localStorage.setItem('darkMode', 'on');  // salvez modul noapte
-  } else {
-    document.body.classList.remove('dark-mode');
-    localStorage.setItem('darkMode', 'off'); // salvez modul zi
-  }
+    if (toggle.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', 'on');  // salvez modul noapte
+    } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', 'off'); // salvez modul zi
+    }
+});
+
+
+
+
+
+// datele produselor si reduceri
+fetch("https://script.google.com/macros/s/AKfycbyScUGYkwHaUA3G3P7sPQ5ItrEMaox3hVO6TmlsnRQMeecS1sm6X12wlWTPSLCLxRe_/exec")
+    .then(res => res.json())
+    .then(produse => {
+        produse.forEach(prod => {
+            const card = document.querySelector(`[data-id='${prod.id}']`);
+            if (!card) return;
+
+            const numeEl = card.querySelector(".nume-produs");
+            if (numeEl) numeEl.textContent = prod.nume;
+
+            const pretEl = card.querySelector(".pret-produs");
+            if (pretEl) {
+                pretEl.textContent = `${prod.pret}/kg`;
+
+                if (prod.reducere) {
+                    pretEl.style.color = "red";
+                } else {
+                    pretEl.style.color = "black";
+                }
+            }
+
+            const reducereEl = card.querySelector(".reducere-produs");
+            if (reducereEl && prod.reducere) {
+                reducereEl.textContent = `${prod.reducere}%`;
+                reducereEl.style.display = "block";
+            } else if (reducereEl) {
+                reducereEl.style.display = "none";
+            }
+        });
+    });
+
+
+
+
+
+// miscarea textului la reducere
+const textTop = document.querySelector('.text-top');
+const textBottom = document.querySelector('.text-bottom');
+
+window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
+
+    const moveAmount = scrollPosition * 0.2;
+
+    textTop.style.transform = `translateX(-${moveAmount}px)`;
+    textBottom.style.transform = `translateX(-${moveAmount}px)`;
 });
