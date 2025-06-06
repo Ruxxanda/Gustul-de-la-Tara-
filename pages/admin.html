@@ -47,6 +47,31 @@
                 </a>
             </div>
             <div class="contact">
+                <a href="parola.html">
+                    <h2>Accesează Admin</h2>
+                </a>
+            </div>
+        </nav>
+
+        <nav id="bara2" class="bara">
+            <div class="search activa">
+                <i class="fa-solid fa-magnifying-glass icon-search" id="search-icon"></i>
+                <div class="search-bar" id="search-bar">
+                    <input type="text" id="searchInput" placeholder="Caută un produs...">
+                </div>
+            </div>
+
+
+            <div class="link">
+                <a href="../index.html">Acasă</a>
+                <a href="despre.html">Despre noi</a>
+                <a href="vanzari.html">Vânzări</a>
+                <a href="noutati.html">Noutăți</a>
+                <a href="galerie.html">Galerie</a>
+                <a href="contacte.html">Contacte</a>
+            </div>
+
+            <div class="product">
                 <label for="toggle" class="toggle">
                     <input type="checkbox" />
 
@@ -146,31 +171,6 @@
                     </svg>
                 </label>
 
-                <a href="parola.html">
-                    <h2>Accesează Admin</h2>
-                </a>
-            </div>
-        </nav>
-
-        <nav id="bara2" class="bara">
-            <div class="search activa">
-                <i class="fa-solid fa-magnifying-glass icon-search" id="search-icon"></i>
-                <div class="search-bar" id="search-bar">
-                    <input type="text" id="searchInput" placeholder="Caută un produs...">
-                </div>
-            </div>
-
-
-            <div class="link">
-                <a href="../index.html">Acasă</a>
-                <a href="despre.html">Despre noi</a>
-                <a href="vanzari.html">Vânzări</a>
-                <a href="noutati.html">Noutăți</a>
-                <a href="galerie.html">Galerie</a>
-                <a href="contacte.html">Contacte</a>
-            </div>
-
-            <div class="product">
                 <div class="like">
                     <a href="salvari.html">
                         <i class="fa-regular fa-heart"></i>
@@ -200,6 +200,7 @@
                 <a href="noutati.html">Noutăți</a>
                 <a href="galerie.html">Galerie</a>
                 <a href="contacte.html">Contacte</a>
+                <a href="parola.html">Accesează Admin</a>
             </div>
         </div>
 
@@ -230,7 +231,7 @@
             <textarea name="Text" rows="7" placeholder="Introdu textul"></textarea>
             <input class="button" type="submit" value="Publică" id="submit">
         </form>
-        <p>Ca să modifici sau să elimini noutățile, accesează <a
+        <p>Ca să modifici sau să elimini noutățile, accesează <a target="_blank"
                 href="https://docs.google.com/spreadsheets/d/1t93eicQX3FN5xJpmcVAT1kLZ1GJrkjWQOwfLx-NmP6U/edit?usp=sharing">acest
                 link</a> și fă schimbările manual. Pentru a șterge o
             noutate, trebuie să ștergi tot rândul cu acea noutate din tabel.
@@ -253,30 +254,86 @@
         }) 
     </script>
 
-    <!-- <section class="inregis-reducere">
-        <form id="discount-form">
-            <h4>Înregistează reducerea</h4>
-            <input type="text" id="title" placeholder="Titlu" required />
-            <textarea id="description" placeholder="Descriere" required></textarea>
-            <input type="datetime-local" id="end-time" required />
-            <button class="button" type="submit">Salvează Reducerea</button>
+
+
+
+
+
+
+
+
+
+
+    <div id="formular" class="container">
+        <form method="post" action="" name="formular">
+            <h4>Publică noutatea despre o anumită reducere</h4>
+            <label class="text" for="procente">Procentele reducerii:</label>
+            <input id="procente" type="number" name="procente" placeholder="ex: 50">
+            <label class="text" for="inceput">Începutul reducerii:</label>
+            <input id="inceput" name="inceput" type="datetime-local">
+            <label class="text" for="sfarsit">Sfârșitul reducerii:</label>
+            <input id="sfarsit" name="sfarsit" type="datetime-local">
+            <input class="button" type="submit" value="Salvează" id="submit">
+            <a target="_blank"
+                href="https://docs.google.com/spreadsheets/d/1Odo0i3CKnTsHYTWTixAftioRrH__1juGylUMDU1hZ-A/edit?usp=sharing">Pentru
+                a modifica datele, accesați lincul.
+            </a>
         </form>
-    </section>
+    </div>
+    <script>
+        const inceput = document.getElementById('inceput');
+        const sfarsit = document.getElementById('sfarsit');
+
+        inceput.addEventListener('focus', () => {
+            inceput.showPicker && inceput.showPicker();
+        });
+
+        sfarsit.addEventListener('focus', () => {
+            sfarsit.showPicker && sfarsit.showPicker();
+        });
+    </script>
+
 
 
     <script>
-        document.getElementById("discount-form").addEventListener("submit", function (e) {
-            e.preventDefault();
+        const scripteURL = 'https://script.google.com/macros/s/AKfycbyOTTod3ePMVaAzYmhhE6OKnOeAzyBLOlOoIWO3sSSU4o1yKMCx1sdogiLgCdyofpINUA/exec'
 
-            const title = document.getElementById("title").value;
-            const description = document.getElementById("description").value;
-            const endTime = document.getElementById("end-time").value;
+        const forme = document.forms['formular']
 
-            // Salvează reducerile în localStorage
-            localStorage.setItem("discount", JSON.stringify({ title, description, endTime }));
-            alert("Reducerea a fost salvată!");
-        });
-    </script> -->
+        forme.addEventListener('submit', e => {
+
+            e.preventDefault()
+
+            fetch(scripteURL, { method: 'POST', body: new FormData(forme) })
+                .then(response => alert("Salvat!"))
+                .then(() => { window.location.reload(); })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+
+
+
+
+
+    <main>
+
+        <section class="infor-prod">
+            <div>
+                <h2>Datele produselor</h2>
+                <a target="_blank"
+                    href="https://docs.google.com/spreadsheets/d/19C26CJLZ08eP8HGK25q4gHH2ghq-qkGGzUBGKZoe1Qk/edit?usp=sharing">Pentru
+                    a modifica datele, accesați lincul.</a>
+                <iframe class="date-produs"
+                    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQfHxncB-F74xG90m5xfEUFZJm5LuP8PL5JRk_m3UleK0NL-unCKxGVkaYFVtmdODjBLJLS5vdxwtpZ/pubhtml?widget=true&amp;headers=false">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
 
     <button id="scrollToTopBtn">
         <i class="fa-solid fa-arrow-up"></i>
