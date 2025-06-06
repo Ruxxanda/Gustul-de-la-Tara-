@@ -154,6 +154,7 @@ header nav.bara .product .cos .nr {
 
 label.toggle {
     position: relative;
+    margin-right: -20px;
 }
 
 label.toggle input {
@@ -237,7 +238,8 @@ body.dark-mode h4,
 body.dark-mode h5,
 body.dark-mode h6,
 body.dark-mode p,
-body.dark-mode a {
+body.dark-mode a,
+body.dark-mode span {
     color: #ffffff !important;
 }
 
@@ -558,6 +560,70 @@ body.dark-mode section.parola .butoane button:hover {
     color: #ff7400;
 }
 
+
+body.dark-mode .reducere {
+    background-color: #f870009d;
+}
+
+body.dark-mode .reducere .text-top,
+body.dark-mode .reducere .text-bottom {
+    color: #ffffffbd;
+}
+
+body.dark-mode .reducere .continut .text h2 {
+    color: #ffffff;
+}
+
+body.dark-mode .reducere .continut .text h2 span {
+    color: #ff2200 !important;
+}
+
+body.dark-mode .reducere .continut .text button {
+    color: #ffffff;
+    background-color: #ff2200;
+}
+
+body.dark-mode .reducere .continut .text button:hover {
+    background-color: #ffffff;
+    color: #ff2200;
+}
+
+body.dark-mode .reducere .continut .timer p {
+    font-size: 30px;
+    color: #000000;
+}
+
+body.dark-mode .reducere .continut .timer span.time {
+    color: #000000;
+}
+
+body.dark-mode section#stelute #rating-container .star.active {
+    color: gold !important;
+}
+
+body.dark-mode section.infor-prod div a {
+    color: #ff7400 !important;
+}
+
+body.dark-mode #formular p a {
+    color: #ff7400 !important;
+}
+
+body.dark-mode #formular form label.text {
+    color: #ffffff;
+}
+
+
+body.dark-mode #formular form a {
+    color: #ff7400 !important;
+}
+
+
+
+
+#formular form a {
+    color: #ffaa00;
+}
 
 
 
@@ -2397,6 +2463,20 @@ section.salvari {
 
 
 
+section.vanzari .box .precos .reducere-produs,
+section.salvari .box .precos .reducere-produs,
+section.cos .box .precos .reducere-produs {
+    position: absolute;
+    color: #ffffff;
+    background-color: #ff0000;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-top: -70px;
+    margin-left: 143px;
+}
+
+
+
 /* Stil inițial pentru inima albă */
 section.vanzari .box .precos .fa-heart,
 section.salvari .box .precos .fa-heart,
@@ -3136,6 +3216,7 @@ input[type="number"]::-webkit-outer-spin-button {
 #numeUser {
     font-size: 20px;
 }
+
 section.parola {
     background-color: #ffd061;
     width: 400px;
@@ -3284,6 +3365,17 @@ input[type="number"]::-webkit-outer-spin-button {
     justify-content: center;
     gap: 10px;
     margin: 50px 0;
+    width: 70%;
+}
+
+#formular form label.text {
+    font-size: 15px;
+    margin: 0 0 -10px 10px;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
 }
 
 #formular form h4 {
@@ -3298,7 +3390,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 #formular form input,
 #formular form textarea {
-    width: 110vh;
+    width: 100%;
     height: 50px;
     border: none;
     outline: none;
@@ -3347,7 +3439,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 #formular p {
     text-align: start;
-    width: 110vh;
+    width: 70%;
     margin-bottom: 50px;
 }
 
@@ -3432,8 +3524,159 @@ section.inregis-reducere form#discount-form .button:active {
 
 
 
+
+/* reducere */
+.reducere {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 600px;
+    background-color: #ffd983;
+    margin: 0;
+    margin-top: 100px;
+    padding: 10%;
+}
+
+.reducere .text-top,
+.reducere .text-bottom {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 40px;
+    color: #000000bd;
+    will-change: transform;
+}
+
+.reducere .text-top {
+    top: 0;
+}
+
+.reducere .text-bottom {
+    bottom: 0;
+}
+
+.reducere .continut {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.reducere .continut .text {
+    width: 50%;
+}
+
+.reducere .continut .text h2 {
+    color: #000000;
+    margin-bottom: 20px;
+    font-family: "Kameron";
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 50px;
+}
+
+.reducere .continut .text h2 span {
+    font-weight: 2000px;
+    font-size: 70px;
+    color: #ff2200;
+}
+
+.reducere .continut .text button {
+    color: #ffffff;
+    background-color: #ff2200;
+    border: none;
+    padding: 7px 15px;
+    border-radius: 10px;
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.reducere .continut .text button:hover {
+    background-color: #ffffff;
+    color: #ff2200;
+}
+
+.reducere .continut .timer {
+    text-align: end;
+    position: absolute;
+    right: 10%;
+    margin-top: 150px;
+}
+
+.reducere .continut .timer p {
+    font-size: 30px;
+    color: #000000;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.reducere .continut .timer span.time {
+    color: #000000;
+    font-size: 170px;
+    font-weight: 800;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section.infor-prod {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0 100px;
+    width: 70%;
+}
+
+section.infor-prod div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+}
+
+section.infor-prod div a {
+    color: #ffaa00;
+}
+
+section.infor-prod div iframe.date-produs {
+    width: 100%;
+    height: 300px;
+    border: none;
+}
+
+@media (max-width: 1250px) {
+
+    .reducere .continut {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .reducere .continut .text {
+        width: 100%;
+    }
+
+
+}
+
+
 /* tablete */
 @media (max-width: 1100px) {
+
+    body.dark-mode section.vanzari {
+        margin: 0;
+    }
+
+
 
     header,
     header.toate-altele {
@@ -4055,8 +4298,16 @@ section.inregis-reducere form#discount-form .button:active {
 
 
 
+@media (max-width: 990px) {
 
+    .reducere .continut .timer {
+        margin-top: 200px !important;
+    }
 
+    .reducere .continut .timer span.time {
+        font-size: 100px !important;
+    }
+}
 
 
 @media (max-width: 810px) {
@@ -4366,8 +4617,6 @@ section.inregis-reducere form#discount-form .button:active {
 
 
 
-
-
     section.link {
         flex-direction: column;
     }
@@ -4509,7 +4758,40 @@ section.inregis-reducere form#discount-form .button:active {
 
 
 
+    section.reducere .continut .text h2 {
+        font-size: 30px;
+        line-height: 30px;
+        margin-top: 40px;
+    }
 
+    section.reducere .continut .text h2 span {
+        font-size: 50px;
+    }
+
+    section.reducere .continut .timer {
+        margin-top: 250px !important;
+    }
+
+    section.reducere .continut .timer p {
+        font-size: 20px !important;
+    }
+
+    section.reducere .continut .timer span#durata {
+        font-size: 70px !important;
+    }
+
+
+    section.vanzari .box .precos .reducere-produs,
+    section.salvari .box .precos .reducere-produs,
+    section.cos .box .precos .reducere-produs {
+        margin-left: 78px;
+    }
+
+    section.vanzari .box h3,
+    section.cos .box h3,
+    section.salvari .box h3 {
+        line-height: 18px;
+    }
 
     .testimonial-section .slider-wrapper {
         margin: 0 0 30px;
@@ -5386,6 +5668,11 @@ section.inregis-reducere form#discount-form .button:active {
 
 
 @media (max-width: 500px) {
+
+    #formular form h4 {
+        font-size: 15px;
+    }
+
     section.oferte .toate-ofertele .oferta h1 {
         line-height: 20px;
         font-size: 20px;
@@ -5422,8 +5709,23 @@ section.inregis-reducere form#discount-form .button:active {
         padding-top: 10%;
         margin-left: 2%;
     }
+
+
+    body.dark-mode section.vanzari {
+        margin-top: 50px;
+    }
 }
 
+@media (max-width: 400px) {
+
+    section.vanzari .toate-box,
+    section.cos .toate-box,
+    section.salvari .toate-box {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+}
 
 
 
